@@ -9,3 +9,4 @@ langchain-aws
 langchain-experimental
 tabulate
 altair<5
+imghdr
