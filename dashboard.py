@@ -2087,6 +2087,39 @@ def render_pdf_upload_tab():
                         on_select="rerun",
                         selection_mode="single-row",
                         key="pdf_table_selection",
+                        column_config={
+                            "Quantity": st.column_config.NumberColumn(
+                                "Quantity", format="%d"
+                            ),
+                            "Unit Price": st.column_config.NumberColumn(
+                                "Unit Price", format="$%.2f"
+                            ),
+                            "Total Price": st.column_config.NumberColumn(
+                                "Total Price", format="$%.2f"
+                            ),
+                            "Unit Price Threshold": st.column_config.NumberColumn(
+                                "Unit Price Threshold", format="$%.2f"
+                            ),
+                            "Total Threshold Price": st.column_config.NumberColumn(
+                                "Total Threshold Price", format="$%.2f"
+                            ),
+                            "Threshold Multiplier": st.column_config.NumberColumn(
+                                "Threshold Multiplier", format="%.2f×"
+                            ),
+                            "Price Difference": st.column_config.NumberColumn(
+                                "Price Difference", format="$%.2f"
+                            ),
+                            "Dosage Value": st.column_config.NumberColumn(
+                                "Dosage Value", format="%.2f"
+                            ),
+                            "No. of Medicare Units": st.column_config.NumberColumn(
+                                "No. of Medicare Units", format="%.2f"
+                            ),
+                            "Extraction Confidence": st.column_config.NumberColumn(
+                                "Extraction Confidence", format="%d%%"
+                            ),
+                            "CPT Code Source": None,
+                        },
                     )
 
                     # Check for selection
