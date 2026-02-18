@@ -1197,105 +1197,141 @@ def get_metrics(df: pd.DataFrame):
         st.metric("Drugs", drug_count)
 
 
-def get_dataframe_with_color_coding(df: pd.DataFrame) -> pd.DataFrame:
+def display_dataframe_with_color_coding(
+    df: pd.DataFrame,
+    key_prefix: str = "default",
+):
+    """
+    Display a styled DataFrame with metrics and dynamic threshold controls.
+    key_prefix MUST be unique per function instance on the same page.
+    """
 
-    # Dynamic filter controls
+    # ---------- Scoped key helper ----------
+    def k(name: str) -> str:
+        return f"{key_prefix}_{name}"
+
+    # ---------- Initialize session state ----------
+    if k("active_thresholds") not in st.session_state:
+        st.session_state[k("active_thresholds")] = [
+            "Multiplier Threshold",
+            "Difference Threshold",
+        ]
+
+    if k("m_threshold") not in st.session_state:
+        st.session_state[k("m_threshold")] = 2.0
+
+    if k("d_threshold") not in st.session_state:
+        st.session_state[k("d_threshold")] = 10.0
+
+    active_thresholds = st.session_state[k("active_thresholds")]
+    m_threshold = float(st.session_state[k("m_threshold")])
+    d_threshold = float(st.session_state[k("d_threshold")])
+
+    # ---------- Normalize numeric columns ----------
+    numeric_rounding = {
+        "Unit Price": 2,
+        "Total Price": 2,
+        "Unit Price Threshold": 2,
+        "Total Threshold Price": 2,
+        "Price Difference": 2,
+        "Threshold Multiplier": 2,
+        "Dosage Value": 2,
+        "No. of Medicare Units": 2,
+    }
+
+    for col, decimals in numeric_rounding.items():
+        if col in df.columns:
+            df[col] = pd.to_numeric(df[col], errors="coerce").round(decimals)
+
+    if "Quantity" in df.columns:
+        df["Quantity"] = (
+            pd.to_numeric(df["Quantity"], errors="coerce").fillna(0).astype(int)
+        )
+
+    if "Extraction Confidence" in df.columns:
+        df["Extraction Confidence"] = (
+            pd.to_numeric(df["Extraction Confidence"], errors="coerce")
+            .fillna(0)
+            .astype(int)
+        )
 
     active_thresholds = st.multiselect(
         "Select Active Thresholds",
         ["Multiplier Threshold", "Difference Threshold"],
-        default=["Multiplier Threshold", "Difference Threshold"],
-        help="Select which thresholds should trigger a red highlight",
-        key=uuid.uuid4(),
+        key=k("active_thresholds"),
     )
 
     fcol1, fcol2 = st.columns(2)
+
     with fcol1:
         m_threshold = st.number_input(
-            "Multiplier Threshold Value (Red if > X)",
+            "Multiplier Threshold (Red if > X)",
             min_value=1.0,
             max_value=100.0,
-            value=2.0,
             step=0.1,
+            format="%.2f",
+            key=k("m_threshold"),
             disabled="Multiplier Threshold" not in active_thresholds,
-            help="Highlight row in red if Multiplier is greater than this value",
-            key=uuid.uuid4(),
         )
+
     with fcol2:
         d_threshold = st.number_input(
-            "Difference Threshold Value (Red if > $X)",
+            "Difference Threshold (Red if > $X)",
             min_value=0.0,
             max_value=10000.0,
-            value=10.0,
             step=1.0,
+            format="%.2f",
+            key=k("d_threshold"),
             disabled="Difference Threshold" not in active_thresholds,
-            help="Highlight row in red if Price Difference is greater than this value",
-            key=uuid.uuid4(),
         )
 
     st.divider()
 
-    # Apply styling to the DataFrame
+    # ---------- Row styling ----------
     def style_rows(row):
         styles = [""] * len(row)
 
-        # Style Cost Analysis (Multiplier & Difference)
-        m_val = row.get("Threshold Multiplier")
-        d_val = row.get("Price Difference")
-        u_threshold = row.get("Unit Price Threshold", 0)
+        try:
+            m_val = float(row.get("Threshold Multiplier", 0))
+            d_val = float(row.get("Price Difference", 0))
+            u_threshold = float(row.get("Unit Price Threshold", 0))
 
-        if pd.notnull(m_val) and u_threshold > 0:
-            try:
-                m_float = float(m_val)
-                d_float = float(d_val)
-
-                # Check which thresholds are active and exceeded
+            if u_threshold > 0:
                 m_exceeded = (
-                    "Multiplier Threshold" in active_thresholds
-                    and m_float > m_threshold
+                    "Multiplier Threshold" in active_thresholds and m_val > m_threshold
                 )
                 d_exceeded = (
-                    "Difference Threshold" in active_thresholds
-                    and d_float > d_threshold
+                    "Difference Threshold" in active_thresholds and d_val > d_threshold
                 )
 
-                # If any active threshold is exceeded, mark red. Else green.
-                if m_exceeded or d_exceeded:
-                    color_style = "background-color: #FFCDD2; color: #B71C1C;"
-                else:
-                    color_style = "background-color: #C8E6C9; color: #1B5E20;"
+                color = (
+                    "background-color:#FFCDD2;color:#B71C1C;"
+                    if m_exceeded or d_exceeded
+                    else "background-color:#C8E6C9;color:#1B5E20;"
+                )
 
-                styles[row.index.get_loc("Threshold Multiplier")] = color_style
-                styles[row.index.get_loc("Price Difference")] = color_style
-            except (ValueError, TypeError):
-                pass
+                styles[row.index.get_loc("Threshold Multiplier")] = color
+                styles[row.index.get_loc("Price Difference")] = color
+        except Exception:
+            pass
 
-        # Style CPT Code based on source
         source = row.get("CPT Code Source")
         if source == "extracted":
             styles[row.index.get_loc("CPT Code")] = (
-                "background-color: #EEEEEE; color: #424242;"  # Grey
+                "background-color:#EEEEEE;color:#424242;"
             )
         elif source == "inferred":
             styles[row.index.get_loc("CPT Code")] = (
-                "background-color: #E3F2FD; color: #0D47A1;"  # Blue
+                "background-color:#E3F2FD;color:#0D47A1;"
             )
 
-        # Style Extraction Confidence
         conf = row.get("Extraction Confidence")
         if pd.notnull(conf):
-            if conf >= 90:
-                styles[row.index.get_loc("Extraction Confidence")] = (
-                    "color: #1B5E20; font-weight: bold;"  # Green
-                )
-            elif conf >= 70:
-                styles[row.index.get_loc("Extraction Confidence")] = (
-                    "color: #E65100;"  # Orange
-                )
-            else:
-                styles[row.index.get_loc("Extraction Confidence")] = (
-                    "color: #B71C1C;"  # Red
-                )
+            styles[row.index.get_loc("Extraction Confidence")] = (
+                "color:#1B5E20;font-weight:bold;"
+                if conf >= 90
+                else "color:#E65100;" if conf >= 70 else "color:#B71C1C;"
+            )
 
         return styles
 
@@ -1303,205 +1339,234 @@ def get_dataframe_with_color_coding(df: pd.DataFrame) -> pd.DataFrame:
     return styled_df
 
 
-def display_dataframe_with_metrics(df: pd.DataFrame, token_usage: dict = None):
-    """Display the DataFrame with summary metrics and optional token usage."""
-    # Summary statistics
+def display_dataframe_with_metrics(
+    df: pd.DataFrame,
+    token_usage: dict = None,
+    key_prefix: str = "default",
+):
+    """
+    Display a styled DataFrame with metrics and dynamic threshold controls.
+    key_prefix MUST be unique per function instance on the same page.
+    """
+
+    # ---------- Scoped key helper ----------
+    def k(name: str) -> str:
+        return f"{key_prefix}_{name}"
+
+    # ---------- Initialize session state ----------
+    if k("active_thresholds") not in st.session_state:
+        st.session_state[k("active_thresholds")] = [
+            "Multiplier Threshold",
+            "Difference Threshold",
+        ]
+
+    if k("m_threshold") not in st.session_state:
+        st.session_state[k("m_threshold")] = 2.0
+
+    if k("d_threshold") not in st.session_state:
+        st.session_state[k("d_threshold")] = 10.0
+
+    active_thresholds = st.session_state[k("active_thresholds")]
+    m_threshold = float(st.session_state[k("m_threshold")])
+    d_threshold = float(st.session_state[k("d_threshold")])
+
+    # ---------- Normalize numeric columns ----------
+    numeric_rounding = {
+        "Unit Price": 2,
+        "Total Price": 2,
+        "Unit Price Threshold": 2,
+        "Total Threshold Price": 2,
+        "Price Difference": 2,
+        "Threshold Multiplier": 2,
+        "Dosage Value": 2,
+        "No. of Medicare Units": 2,
+    }
+
+    for col, decimals in numeric_rounding.items():
+        if col in df.columns:
+            df[col] = pd.to_numeric(df[col], errors="coerce").round(decimals)
+
+    if "Quantity" in df.columns:
+        df["Quantity"] = (
+            pd.to_numeric(df["Quantity"], errors="coerce").fillna(0).astype(int)
+        )
+
+    if "Extraction Confidence" in df.columns:
+        df["Extraction Confidence"] = (
+            pd.to_numeric(df["Extraction Confidence"], errors="coerce")
+            .fillna(0)
+            .astype(int)
+        )
+
+    # ---------- Summary metrics ----------
     col1, col2, col3, col4, col5, col6 = st.columns(6)
+
     with col1:
         st.metric("Total Items", len(df))
+
     with col2:
-        total_amount = df["Total Price"].sum()
-        st.metric("Total Amount", f"${total_amount:,.2f}")
+        st.metric("Total Amount", f"${df['Total Price'].sum():,.2f}")
+
     with col3:
-        unique_cpt = df["CPT Code"].nunique()
-        st.metric("Unique CPT Codes", unique_cpt)
-    with col6:
-        accuracy = token_usage.get("avg_table_confidence", 90)
-        st.metric("Extraction Accuracy", f"{accuracy}%")
+        st.metric("Unique CPT Codes", df["CPT Code"].nunique())
+
     with col4:
-        procedure_count = len(df[df["Entity Type"] == "procedure"])
-        st.metric("Procedures", procedure_count)
+        st.metric("Procedures", int((df["Entity Type"] == "procedure").sum()))
+
     with col5:
-        drug_count = len(df[df["Entity Type"] == "drug"])
-        st.metric("Drugs", drug_count)
+        st.metric("Drugs", int((df["Entity Type"] == "drug").sum()))
+
+    with col6:
+        accuracy = token_usage.get("avg_table_confidence", 90) if token_usage else 90
+        st.metric("Extraction Accuracy", f"{int(accuracy)}%")
 
     st.divider()
 
-    # Dynamic filter controls
+    # ---------- Threshold controls ----------
     st.subheader("🛠️ Dynamic Review Thresholds")
 
     active_thresholds = st.multiselect(
         "Select Active Thresholds",
         ["Multiplier Threshold", "Difference Threshold"],
-        default=["Multiplier Threshold", "Difference Threshold"],
-        help="Select which thresholds should trigger a red highlight",
-        key=uuid.uuid4(),
+        key=k("active_thresholds"),
     )
 
     fcol1, fcol2 = st.columns(2)
+
     with fcol1:
         m_threshold = st.number_input(
-            "Multiplier Threshold Value (Red if > X)",
+            "Multiplier Threshold (Red if > X)",
             min_value=1.0,
             max_value=100.0,
-            value=2.0,
             step=0.1,
+            format="%.2f",
+            key=k("m_threshold"),
             disabled="Multiplier Threshold" not in active_thresholds,
-            help="Highlight row in red if Multiplier is greater than this value",
-            key=uuid.uuid4(),
         )
+
     with fcol2:
         d_threshold = st.number_input(
-            "Difference Threshold Value (Red if > $X)",
+            "Difference Threshold (Red if > $X)",
             min_value=0.0,
             max_value=10000.0,
-            value=10.0,
             step=1.0,
+            format="%.2f",
+            key=k("d_threshold"),
             disabled="Difference Threshold" not in active_thresholds,
-            help="Highlight row in red if Price Difference is greater than this value",
-            key=uuid.uuid4(),
         )
 
     st.divider()
 
-    # Apply styling to the DataFrame
+    # ---------- Row styling ----------
     def style_rows(row):
         styles = [""] * len(row)
 
-        # Style Cost Analysis (Multiplier & Difference)
-        m_val = row.get("Threshold Multiplier")
-        d_val = row.get("Price Difference")
-        u_threshold = row.get("Unit Price Threshold", 0)
+        try:
+            m_val = float(row.get("Threshold Multiplier", 0))
+            d_val = float(row.get("Price Difference", 0))
+            u_threshold = float(row.get("Unit Price Threshold", 0))
 
-        if pd.notnull(m_val) and u_threshold > 0:
-            try:
-                m_float = float(m_val)
-                d_float = float(d_val)
-
-                # Check which thresholds are active and exceeded
+            if u_threshold > 0:
                 m_exceeded = (
-                    "Multiplier Threshold" in active_thresholds
-                    and m_float > m_threshold
+                    "Multiplier Threshold" in active_thresholds and m_val > m_threshold
                 )
                 d_exceeded = (
-                    "Difference Threshold" in active_thresholds
-                    and d_float > d_threshold
+                    "Difference Threshold" in active_thresholds and d_val > d_threshold
                 )
 
-                # If any active threshold is exceeded, mark red. Else green.
-                if m_exceeded or d_exceeded:
-                    color_style = "background-color: #FFCDD2; color: #B71C1C;"
-                else:
-                    color_style = "background-color: #C8E6C9; color: #1B5E20;"
+                color = (
+                    "background-color:#FFCDD2;color:#B71C1C;"
+                    if m_exceeded or d_exceeded
+                    else "background-color:#C8E6C9;color:#1B5E20;"
+                )
 
-                styles[row.index.get_loc("Threshold Multiplier")] = color_style
-                styles[row.index.get_loc("Price Difference")] = color_style
-            except (ValueError, TypeError):
-                pass
+                styles[row.index.get_loc("Threshold Multiplier")] = color
+                styles[row.index.get_loc("Price Difference")] = color
+        except Exception:
+            pass
 
-        # Style CPT Code based on source
         source = row.get("CPT Code Source")
         if source == "extracted":
             styles[row.index.get_loc("CPT Code")] = (
-                "background-color: #EEEEEE; color: #424242;"  # Grey
+                "background-color:#EEEEEE;color:#424242;"
             )
         elif source == "inferred":
             styles[row.index.get_loc("CPT Code")] = (
-                "background-color: #E3F2FD; color: #0D47A1;"  # Blue
+                "background-color:#E3F2FD;color:#0D47A1;"
             )
 
-        # Style Extraction Confidence
         conf = row.get("Extraction Confidence")
         if pd.notnull(conf):
-            if conf >= 90:
-                styles[row.index.get_loc("Extraction Confidence")] = (
-                    "color: #1B5E20; font-weight: bold;"  # Green
-                )
-            elif conf >= 70:
-                styles[row.index.get_loc("Extraction Confidence")] = (
-                    "color: #E65100;"  # Orange
-                )
-            else:
-                styles[row.index.get_loc("Extraction Confidence")] = (
-                    "color: #B71C1C;"  # Red
-                )
+            styles[row.index.get_loc("Extraction Confidence")] = (
+                "color:#1B5E20;font-weight:bold;"
+                if conf >= 90
+                else "color:#E65100;" if conf >= 70 else "color:#B71C1C;"
+            )
 
         return styles
 
     styled_df = df.style.apply(style_rows, axis=1)
 
-    # Display the DataFrame
+    # ---------- DataFrame display ----------
     st.dataframe(
         styled_df,
         use_container_width=True,
         hide_index=True,
         column_config={
-            "Document Name": st.column_config.TextColumn(
-                "Document Name", width="medium"
-            ),
-            "Date": st.column_config.TextColumn("Date", width="small"),
-            "Medical Procedure Name": st.column_config.TextColumn(
-                "Medical Procedure Name", width="large"
-            ),
-            "CPT Code": st.column_config.TextColumn("CPT Code", width="small"),
-            "Modifier": st.column_config.TextColumn("Modifier", width="small"),
             "Quantity": st.column_config.NumberColumn("Quantity", format="%d"),
             "Unit Price": st.column_config.NumberColumn("Unit Price", format="$%.2f"),
             "Total Price": st.column_config.NumberColumn("Total Price", format="$%.2f"),
-            "Entity Type": st.column_config.TextColumn("Entity Type", width="small"),
-            "Dosage Value": st.column_config.NumberColumn(
-                "Dosage Value", format="%.2f"
-            ),
-            "Dosage Unit": st.column_config.TextColumn("Dosage Unit", width="small"),
             "Unit Price Threshold": st.column_config.NumberColumn(
                 "Unit Price Threshold", format="$%.2f"
-            ),
-            "No. of Medicare Units": st.column_config.NumberColumn(
-                "No. of Medicare Units", format="%.2f"
             ),
             "Total Threshold Price": st.column_config.NumberColumn(
                 "Total Threshold Price", format="$%.2f"
             ),
             "Threshold Multiplier": st.column_config.NumberColumn(
-                "Threshold Multiplier", format="%.2f"
+                "Threshold Multiplier", format="%.2f×"
             ),
             "Price Difference": st.column_config.NumberColumn(
                 "Price Difference", format="$%.2f"
             ),
+            "Dosage Value": st.column_config.NumberColumn(
+                "Dosage Value", format="%.2f"
+            ),
+            "No. of Medicare Units": st.column_config.NumberColumn(
+                "No. of Medicare Units", format="%.2f"
+            ),
             "Extraction Confidence": st.column_config.NumberColumn(
-                "Extraction Confidence",
-                format="%d%%",
-                help="Confidence of extraction for this specific row",
+                "Extraction Confidence", format="%d%%"
             ),
             "CPT Code Source": None,
         },
     )
 
-    # Bill Summary Section
+    # ---------- Bill summary ----------
     st.divider()
     st.subheader("📋 Bill Summary")
+
     summary_text = generate_bill_summary(df)
 
     with st.expander("View Bill Summary Details", expanded=True):
         st.code(summary_text, language="text")
-
         st.download_button(
-            label="📥 Download Bill Summary (.txt)",
-            data=summary_text,
-            file_name=f"medical_bill_summary_{int(time.time())}.txt",
-            mime="text/plain",
+            "📥 Download Bill Summary (.txt)",
+            summary_text,
+            f"medical_bill_summary_{int(time.time())}.txt",
+            "text/plain",
             use_container_width=True,
-            key=uuid.uuid4(),
+            key=k("download_summary"),
         )
 
-    # Display extraction metadata if provided
+    # ---------- Extraction info ----------
     if token_usage:
         st.divider()
-        st.markdown("### � Extraction Info")
-        if token_usage.get("cached"):
-            st.success("✅ **Loaded from cache** - No API call made")
-        else:
-            st.info(f"🔄 **Freshly extracted** via AWS Textract")
+        st.markdown("### 📊 Extraction Info")
+        (
+            st.success("✅ Loaded from cache")
+            if token_usage.get("cached")
+            else st.info("🔄 Freshly extracted via AWS Textract")
+        )
 
 
 def render_chat_interface(df: pd.DataFrame, chat_key_prefix: str):
@@ -1659,7 +1724,7 @@ def render_single_bill_tab():
             st.divider()
             st.subheader("📋 Extracted Medical Bill Data")
 
-            display_dataframe_with_metrics(df, token_usage)
+            display_dataframe_with_metrics(df, token_usage, key_prefix="single")
 
             # Download button for CSV
             st.divider()
@@ -1802,7 +1867,7 @@ def render_multiple_bills_tab():
             unique_docs = df["Document Name"].nunique()
             st.metric("Documents Processed", unique_docs)
 
-            display_dataframe_with_metrics(df, token_usage)
+            display_dataframe_with_metrics(df, token_usage, key_prefix="multiple")
 
             # Download button for CSV
             st.divider()
@@ -2011,8 +2076,9 @@ def render_pdf_upload_tab():
                 tab_1, tab_2 = st.tabs(["AI Generated", "User Edited"])
                 with tab_1:
                     # Using selection mode if supported, otherwise just a selectbox
-                    styled_df = get_dataframe_with_color_coding(
-                        df.drop(columns=["Highlight Geometry"])
+                    styled_df = display_dataframe_with_color_coding(
+                        df.drop(columns=["Highlight Geometry"]),
+                        key_prefix="pdf_table",
                     )
                     selection = st.dataframe(
                         styled_df,
@@ -2048,11 +2114,36 @@ def render_pdf_upload_tab():
                         key="pdf_table_selection_edited",
                         column_config={
                             "Quantity": st.column_config.NumberColumn(
-                                "Quantity", min_value=0, step=1
+                                "Quantity", format="%d"
                             ),
                             "Unit Price": st.column_config.NumberColumn(
-                                "Unit Price", min_value=0, step=50
+                                "Unit Price", format="$%.2f"
                             ),
+                            "Total Price": st.column_config.NumberColumn(
+                                "Total Price", format="$%.2f"
+                            ),
+                            "Unit Price Threshold": st.column_config.NumberColumn(
+                                "Unit Price Threshold", format="$%.2f"
+                            ),
+                            "Total Threshold Price": st.column_config.NumberColumn(
+                                "Total Threshold Price", format="$%.2f"
+                            ),
+                            "Threshold Multiplier": st.column_config.NumberColumn(
+                                "Threshold Multiplier", format="%.2f×"
+                            ),
+                            "Price Difference": st.column_config.NumberColumn(
+                                "Price Difference", format="$%.2f"
+                            ),
+                            "Dosage Value": st.column_config.NumberColumn(
+                                "Dosage Value", format="%.2f"
+                            ),
+                            "No. of Medicare Units": st.column_config.NumberColumn(
+                                "No. of Medicare Units", format="%.2f"
+                            ),
+                            "Extraction Confidence": st.column_config.NumberColumn(
+                                "Extraction Confidence", format="%d%%"
+                            ),
+                            "CPT Code Source": None,
                         },
                     )
 
