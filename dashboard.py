@@ -61,6 +61,29 @@ def load_demo_files():
     st.session_state["use_demo_files"] = True
 
 
+def load_demo_bill():
+    demo_base = "public/single-bill"
+
+    with open(os.path.join(demo_base, "Medical_Bill_1.png"), "rb") as f:
+        img_bytes = f.read()
+
+    st.session_state["demo_bill"] = BytesIO(img_bytes)
+    st.session_state["demo_bill"].name = "Medical_Bill_1.png"
+
+
+def load_demo_bill_multiple():
+    demo_base = "public/multiple-bill"
+
+    bill_files = ["Medical_Bill_1.png", "Medical_Bill_2.png"]
+
+    st.session_state["demo_bill_multiple"] = []
+    for file in bill_files:
+        with open(os.path.join(demo_base, file), "rb") as f:
+            img_bytes = f.read()
+        st.session_state["demo_bill_multiple"].append(BytesIO(img_bytes))
+        st.session_state["demo_bill_multiple"][-1].name = file
+
+
 # 1. Setup Token Tracking Callback
 class BedrockTokenCallback(BaseCallbackHandler):
     def __init__(self):
@@ -1562,12 +1585,19 @@ def render_single_bill_tab():
     st.subheader("📄 Upload Single Medical Bill")
 
     # File uploader
-    uploaded_file = st.file_uploader(
+    uploaded_doc = st.file_uploader(
         "Upload Medical Bill Image",
         type=["png", "jpg", "jpeg"],
         help="Upload a PNG or JPG image of your medical bill",
         key="single_bill_uploader",
     )
+    if st.button("🧪 Load Demo Files", use_container_width=True, key="single-bill"):
+        load_demo_bill()
+        st.success("Demo files loaded!")
+
+    use_demo = st.session_state.get("demo_bill", False)
+
+    uploaded_file = st.session_state.get("demo_bill") if use_demo else uploaded_doc
 
     if uploaded_file is not None:
         # Display the uploaded image
@@ -1652,12 +1682,22 @@ def render_multiple_bills_tab():
     st.subheader("📚 Upload Multiple Medical Bills")
 
     # File uploader for multiple files
-    uploaded_files = st.file_uploader(
+    uploaded_docs = st.file_uploader(
         "Upload Medical Bill Images",
         type=["png", "jpg", "jpeg"],
         help="Upload multiple PNG or JPG images of your medical bills",
         accept_multiple_files=True,
         key="multiple_bills_uploader",
+    )
+
+    if st.button("🧪 Load Demo Files", use_container_width=True, key="multiple-bill"):
+        load_demo_bill_multiple()
+        st.success("Demo files loaded!")
+
+    use_demo = st.session_state.get("demo_bill_multiple", False)
+
+    uploaded_files = (
+        st.session_state.get("demo_bill_multiple") if use_demo else uploaded_docs
     )
 
     if uploaded_files:
@@ -2143,7 +2183,7 @@ def main():
 
         if st.session_state["aws_credentials"] is not None:
             st.set_page_config(
-                page_title="Medical Bill Extractor",
+                page_title="Medical Bill Review",
                 page_icon="🏥",
                 layout="wide",
             )
@@ -2187,11 +2227,19 @@ def main():
 
             # Header
             st.markdown(
-                '<div class="main-header">🏥 Medical Bill Extractor</div>',
-                unsafe_allow_html=True,
-            )
-            st.markdown(
-                '<div class="sub-header">Upload medical bill images to extract procedure details using AI</div>',
+                """
+                <div style="display: flex; align-items: center; gap: 300px;">
+                    <img src="https://awsmp-logos.s3.amazonaws.com/seller-s26bqc5zvqci2/28b3758023bda4842d49ef0317e57566.png" alt="Logo"
+                        width="100" 
+                        style="margin-top: -4px;" />
+                    <div>
+                        <div class="main-header">Medical Bill Review</div>
+                        <div class="sub-header">
+                            Upload medical bills to extract and analyze bill items using AI
+                        </div>
+                    </div>
+                </div>
+                """,
                 unsafe_allow_html=True,
             )
 
@@ -2214,6 +2262,7 @@ def main():
 
             # Instructions in sidebar
             with st.sidebar:
+                # st.image("./public/Doclens_logo.png", use_container_width=False)
                 st.header("📌 How to Use")
                 st.markdown(
                     """
