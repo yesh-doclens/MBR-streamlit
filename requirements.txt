@@ -10,4 +10,4 @@ langchain-experimental
 tabulate
 altair<5
 standard-imghdr
-streamlit
+streamlit=1.54.0
