@@ -1,0 +1,9 @@
+Document Name,Date,Medical Procedure Name,CPT Code,CPT Code Source,Modifier,Quantity,Unit Price,Total Price,Entity Type,Dosage Value,Dosage Unit,Units from Name,Page,Extraction Confidence,Unit Price Threshold,No. of Medicare Units,Total Threshold Price,Threshold Multiplier,Price Difference
+Medical_Bill_2.png,2022-02-12,ED Intermediate,99284,inferred,,1,385.0,385.0,procedure,,,,1,85,118.24,1.0,118.24,3.26,266.76
+Medical_Bill_2.png,2022-02-12,Admin Inj SQ/IM,96372,inferred,,1,242.0,242.0,procedure,,,,1,90,15.36,1.0,15.36,15.76,226.64
+Medical_Bill_2.png,2022-02-12,PR LEVEL 3 SERVICE,99213,inferred,,1,175.0,175.0,procedure,,,,1,80,95.19,1.0,95.19,1.84,79.81
+Medical_Bill_2.png,2022-02-12,orpheradrine citrate 60 mg / 2 mL injection,J2360,inferred,,1,238.5,238.5,drug,60.0,MG,2.0,1,95,6.39,2.0,12.78,18.66,225.72
+Medical_Bill_2.png,2022-02-12,ketorolac 15 mg injection,J1885,inferred,,1,41.4,41.4,drug,15.0,MG,1.0,1,95,0.33,1.0,0.33,125.45,41.07
+Medical_Bill_2.png,2022-02-12,XR Chest 2 Views,71020,inferred,,1,114.0,114.0,procedure,,,,1,90,0.0,0.0,0.0,,114.0
+Medical_Bill_2.png,2022-02-12,XR Wrist Complete Right,73110,inferred,RT,1,114.0,114.0,procedure,,,,1,90,34.07,1.0,34.07,3.35,79.93
+Medical_Bill_2.png,2022-02-12,XR Spine Cervical Minimum 4 Views,72040,inferred,,1,205.0,205.0,procedure,,,,1,90,29.39,1.0,29.39,6.98,175.61

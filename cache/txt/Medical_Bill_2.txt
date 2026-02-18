@@ -1,0 +1,29 @@
+--- East Alabama Medical Center 2000 Pepperel) Parkway Opelika, AL 36801 ---
+
+--- Report Date: 02/22/22 16:43 ---
+
+Page # 1
+
+Admit Date: 02/12/22
+
+MRN: 1493323
+
+FIN: 2002381021
+
+Discharge Date: 02/12/22
+
+Service Dt Trans DC Description/Trans subtype Reason Amount 02/12/22 02/15/22 ED Intermediate 385.00 02/12/22 02/15/22 Admin Inj SQ/IM 242.00 02/12/22 02/15/22 PR LEVEL 3 SERVICE 175.00 02/12/22 02/12/22 orpheradrine citrate 60 mg / 2 mL injection 238.50 02/12/22 02/12/22 ketorolac 15 mg injection 41.40 02/12/22 02/12/22 XR Chest 2 Views 114.00 02/12/22 02/12/22 XR Wrist Complete Right 114.00 02/12/22 02/12/22 XR Spine Cervical Minimum 4 Views 205.00 Total Charges 1514.90
+
+
+=== TABLE 1 ===
+| Service Dt | Trans DC | Description/Trans subtype                   | Reason        | Amount  |
++------------+----------+---------------------------------------------+---------------+---------+
+| 02/12/22   | 02/15/22 | ED Intermediate                             |               | 385.00  |
+| 02/12/22   | 02/15/22 | Admin Inj SQ/IM                             |               | 242.00  |
+| 02/12/22   | 02/15/22 | PR LEVEL 3 SERVICE                          |               | 175.00  |
+| 02/12/22   | 02/12/22 | orpheradrine citrate 60 mg / 2 mL injection |               | 238.50  |
+| 02/12/22   | 02/12/22 | ketorolac 15 mg injection                   |               | 41.40   |
+| 02/12/22   | 02/12/22 | XR Chest 2 Views                            |               | 114.00  |
+| 02/12/22   | 02/12/22 | XR Wrist Complete Right                     |               | 114.00  |
+| 02/12/22   | 02/12/22 | XR Spine Cervical Minimum 4 Views           |               | 205.00  |
+|            |          |                                             | Total Charges | 1514.90 |

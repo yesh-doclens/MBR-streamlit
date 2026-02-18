@@ -1,0 +1,35 @@
+Document Name,Date,Medical Procedure Name,CPT Code,CPT Code Source,Modifier,Quantity,Unit Price,Total Price,Entity Type,Dosage Value,Dosage Unit,Units from Name,Page,Extraction Confidence,Unit Price Threshold,No. of Medicare Units,Total Threshold Price,Threshold Multiplier,Price Difference
+GP2.pdf,2022-08-05,XR CLAVICLE LT,73002,extracted,LT,1,200.0,200.0,procedure,,,,3,95,25.38,1.0,25.38,7.88,174.62
+GP2.pdf,2022-08-05,XR SHOULDER 2V/MORE,73030,extracted,LT,1,220.0,220.0,procedure,,,,3,95,26.72,1.0,26.72,8.23,193.28
+GP2.pdf,2022-08-05,DEXAMETHASONE 4MG/ML,J1100,inferred,,4,7.92,31.68,drug,4.0,MG,1.0,3,90,0.1,16.0,1.68,18.86,30.0
+GP2.pdf,2022-08-05,KETOROLAC 60MG VIAL,J1885,inferred,,4,12.0,48.0,drug,60.0,MG,1.0,3,90,0.33,16.0,5.33,9.01,42.67
+GP2.pdf,2022-08-05,METHOCARBAMOL 500MG,J2800,inferred,,2,6.0,12.0,drug,500.0,MG,1.0,3,85,4.54,2.0,9.07,1.32,2.93
+GP2.pdf,2022-08-05,ER LEVEL FOUR - 25,99284,extracted,25,1,945.0,945.0,procedure,,,,3,95,118.24,1.0,118.24,7.99,826.76
+GP2.pdf,2022-08-05,IM INJECTION,96372,extracted,,2,162.41,324.82,procedure,,,,3,95,15.36,2.0,30.73,10.57,294.09
+GP2.pdf,2022-09-21,PR EST EVAL VISIT LVL 3,99213,extracted,,1,253.0,253.0,procedure,,,,18,95,95.19,1.0,95.19,2.66,157.81
+GP2.pdf,2022-08-24,PR EST EVAL VISIT LVL 3,99213,extracted,,1,253.0,253.0,procedure,,,,21,95,95.19,1.0,95.19,2.66,157.81
+GP2.pdf,2022-09-24,MRI joint upper extremity w/o dye,73221,extracted,,1,1545.0,1545.0,procedure,,,,41,95,141.95,1.0,141.95,10.88,1403.05
+GP2.pdf,2022-08-05,ALS Emergency Transport,A0427,inferred,,1,900.0,900.0,procedure,,,,58,90,0.0,1.0,0.0,,900.0
+GP2.pdf,2022-08-05,Mileage,A0425,inferred,,2,15.0,34.5,procedure,,,,58,85,0.0,2.0,0.0,,34.5
+GP2.pdf,2022-09-07,PT EVAL: LOW COMPLEX 20,97161,extracted,,1,150.0,150.0,procedure,,,,59,95,97.86,1.0,97.86,1.53,52.14
+GP2.pdf,2022-09-07,Therapeutic Exercise,97110,extracted,,2,50.0,100.0,procedure,,,,59,95,29.06,2.0,58.12,1.72,41.88
+GP2.pdf,2022-09-07,Electrical Stimulation - Not,G0283,extracted,,1,45.0,45.0,procedure,,,,59,95,12.69,1.0,12.69,3.55,32.31
+GP2.pdf,2022-09-07,Neuromuscular Re-ed,97112,extracted,,1,60.0,60.0,procedure,,,,59,95,32.73,1.0,32.73,1.83,27.27
+GP2.pdf,2022-09-09,Therapeutic Exercise,97110,extracted,,2,50.0,100.0,procedure,,,,59,95,29.06,2.0,58.12,1.72,41.88
+GP2.pdf,2022-09-09,Electrical Stimulation - Not,G0283,extracted,,1,45.0,45.0,procedure,,,,59,95,12.69,1.0,12.69,3.55,32.31
+GP2.pdf,2022-09-09,Neuromuscular Re-ed,97112,extracted,,1,60.0,60.0,procedure,,,,59,95,32.73,1.0,32.73,1.83,27.27
+GP2.pdf,2022-09-13,Therapeutic Exercise,97110,extracted,,2,50.0,100.0,procedure,,,,59,95,29.06,2.0,58.12,1.72,41.88
+GP2.pdf,2022-09-13,Electrical Stimulation - Not,G0283,extracted,,1,45.0,45.0,procedure,,,,59,95,12.69,1.0,12.69,3.55,32.31
+GP2.pdf,2022-09-13,Neuromuscular Re-ed,97112,extracted,,1,60.0,60.0,procedure,,,,59,95,32.73,1.0,32.73,1.83,27.27
+GP2.pdf,2022-09-16,Therapeutic Exercise,97110,extracted,,2,50.0,100.0,procedure,,,,59,95,29.06,2.0,58.12,1.72,41.88
+GP2.pdf,2022-09-16,Electrical Stimulation - Not,G0283,extracted,,1,45.0,45.0,procedure,,,,59,95,12.69,1.0,12.69,3.55,32.31
+GP2.pdf,2022-09-16,Neuromuscular Re-ed,97112,extracted,,1,60.0,60.0,procedure,,,,59,95,32.73,1.0,32.73,1.83,27.27
+GP2.pdf,2022-09-21,Therapeutic Exercise,97110,extracted,,2,50.0,100.0,procedure,,,,59,95,29.06,2.0,58.12,1.72,41.88
+GP2.pdf,2022-09-21,Electrical Stimulation - Not,G0283,extracted,,1,45.0,45.0,procedure,,,,59,95,12.69,1.0,12.69,3.55,32.31
+GP2.pdf,2022-09-21,Neuromuscular Re-ed,97112,extracted,,1,60.0,60.0,procedure,,,,59,95,32.73,1.0,32.73,1.83,27.27
+GP2.pdf,2022-09-26,Therapeutic Exercise,97110,extracted,,2,50.0,100.0,procedure,,,,59,95,29.06,2.0,58.12,1.72,41.88
+GP2.pdf,2022-09-26,Electrical Stimulation - Not,G0283,extracted,,1,45.0,45.0,procedure,,,,59,95,12.69,1.0,12.69,3.55,32.31
+GP2.pdf,2022-09-26,Neuromuscular Re-ed,97112,extracted,,1,60.0,60.0,procedure,,,,59,95,32.73,1.0,32.73,1.83,27.27
+GP2.pdf,2022-09-30,Therapeutic Exercise,97110,extracted,,2,50.0,100.0,procedure,,,,60,95,29.06,2.0,58.12,1.72,41.88
+GP2.pdf,2022-09-30,Electrical Stimulation - Not,G0283,extracted,,1,45.0,45.0,procedure,,,,60,95,12.69,1.0,12.69,3.55,32.31
+GP2.pdf,2022-09-30,Neuromuscular Re-ed,97112,extracted,,1,60.0,60.0,procedure,,,,60,95,32.73,1.0,32.73,1.83,27.27
