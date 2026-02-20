@@ -1206,8 +1206,6 @@ def display_dataframe_with_color_coding(
     key_prefix MUST be unique per function instance on the same page.
     """
 
-    df = df.drop(columns=["Extraction Confidence"], errors="ignore")
-
     # ---------- Scoped key helper ----------
     def k(name: str) -> str:
         return f"{key_prefix}_{name}"
@@ -1327,6 +1325,14 @@ def display_dataframe_with_color_coding(
                 "background-color:#E3F2FD;color:#0D47A1;"
             )
 
+        conf = row.get("Extraction Confidence")
+        if pd.notnull(conf):
+            styles[row.index.get_loc("Extraction Confidence")] = (
+                "color:#1B5E20;font-weight:bold;"
+                if conf >= 90
+                else "color:#E65100;" if conf >= 70 else "color:#B71C1C;"
+            )
+
         return styles
 
     styled_df = df.style.apply(style_rows, axis=1)
@@ -1342,7 +1348,6 @@ def display_dataframe_with_metrics(
     Display a styled DataFrame with metrics and dynamic threshold controls.
     key_prefix MUST be unique per function instance on the same page.
     """
-    df = df.drop(columns=["Extraction Confidence"], errors="ignore")
 
     # ---------- Scoped key helper ----------
     def k(name: str) -> str:
@@ -1384,6 +1389,13 @@ def display_dataframe_with_metrics(
     if "Quantity" in df.columns:
         df["Quantity"] = (
             pd.to_numeric(df["Quantity"], errors="coerce").fillna(0).astype(int)
+        )
+
+    if "Extraction Confidence" in df.columns:
+        df["Extraction Confidence"] = (
+            pd.to_numeric(df["Extraction Confidence"], errors="coerce")
+            .fillna(0)
+            .astype(int)
         )
 
     # ---------- Summary metrics ----------
@@ -1521,6 +1533,9 @@ def display_dataframe_with_metrics(
             ),
             "No. of Medicare Units": st.column_config.NumberColumn(
                 "No. of Medicare Units", format="%.2f"
+            ),
+            "Extraction Confidence": st.column_config.NumberColumn(
+                "Extraction Confidence", format="%d%%"
             ),
             "CPT Code Source": None,
         },
@@ -2100,6 +2115,9 @@ def render_pdf_upload_tab():
                             "No. of Medicare Units": st.column_config.NumberColumn(
                                 "No. of Medicare Units", format="%.2f"
                             ),
+                            "Extraction Confidence": st.column_config.NumberColumn(
+                                "Extraction Confidence", format="%d%%"
+                            ),
                             "CPT Code Source": None,
                         },
                     )
@@ -2154,6 +2172,9 @@ def render_pdf_upload_tab():
                             ),
                             "No. of Medicare Units": st.column_config.NumberColumn(
                                 "No. of Medicare Units", format="%.2f"
+                            ),
+                            "Extraction Confidence": st.column_config.NumberColumn(
+                                "Extraction Confidence", format="%d%%"
                             ),
                             "CPT Code Source": None,
                         },
