@@ -1558,15 +1558,15 @@ def display_dataframe_with_metrics(
             key=k("download_summary"),
         )
 
-    # ---------- Extraction info ----------
-    if token_usage:
-        st.divider()
-        st.markdown("### 📊 Extraction Info")
-        (
-            st.success("✅ Loaded from cache")
-            if token_usage.get("cached")
-            else st.info("🔄 Freshly extracted via AWS Textract")
-        )
+    # # ---------- Extraction info ----------
+    # if token_usage:
+    #     st.divider()
+    #     st.markdown("### 📊 Extraction Info")
+    #     (
+    #         st.success("✅ Loaded from cache")
+    #         if token_usage.get("cached")
+    #         else st.info("🔄 Freshly extracted via AWS Textract")
+    #     )
 
 
 def render_chat_interface(df: pd.DataFrame, chat_key_prefix: str):
