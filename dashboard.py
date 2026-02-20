@@ -1186,9 +1186,9 @@ def get_metrics(df: pd.DataFrame):
     with col3:
         unique_cpt = df["CPT Code"].nunique()
         st.metric("Unique CPT Codes", unique_cpt)
-    with col6:
-        accuracy = 90
-        st.metric("Extraction Accuracy", f"{accuracy}%")
+    # with col6:
+    #     accuracy = 90
+    #     st.metric("Extraction Accuracy", f"{accuracy}%")
     with col4:
         procedure_count = len(df[df["Entity Type"] == "procedure"])
         st.metric("Procedures", procedure_count)
@@ -1416,9 +1416,9 @@ def display_dataframe_with_metrics(
     with col5:
         st.metric("Drugs", int((df["Entity Type"] == "drug").sum()))
 
-    with col6:
-        accuracy = token_usage.get("avg_table_confidence", 90) if token_usage else 90
-        st.metric("Extraction Accuracy", f"{int(accuracy)}%")
+    # with col6:
+    #     accuracy = token_usage.get("avg_table_confidence", 90) if token_usage else 90
+    #     st.metric("Extraction Accuracy", f"{int(accuracy)}%")
 
     st.divider()
 
