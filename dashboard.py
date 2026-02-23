@@ -1069,6 +1069,11 @@ def generate_bill_summary(df: pd.DataFrame) -> str:
     total_drug_qty = drug_df["Quantity"].sum()
     total_proc_qty = proc_df["Quantity"].sum()
 
+    # Medicare Procedure Counts
+    medicare_found_qty = df[df["Total Threshold Price"] > 0].shape[0]
+    medicare_not_found_qty = df[df["Total Threshold Price"] == 0].shape[0]
+    total_medicare_qty = medicare_found_qty + medicare_not_found_qty
+
     summary = f"""MEDICAL BILL SUMMARY
 ====================
 - No. of CPT codes found: {found_cpts}
@@ -1079,6 +1084,9 @@ def generate_bill_summary(df: pd.DataFrame) -> str:
 - Total cost of procedures: ${total_proc_cost:,.2f}
 - Total quantity of all drugs: {total_drug_qty}
 - Total quantity of all procedures: {total_proc_qty}
+- Total items with Medicare price found: {medicare_found_qty}
+- Total items without Medicare price: {medicare_not_found_qty}
+- Percentage of items found with Medicare threshold: {medicare_found_qty / total_medicare_qty * 100:.2f}%
 """
     return summary
 
@@ -1513,29 +1521,98 @@ def display_dataframe_with_metrics(
         use_container_width=True,
         hide_index=True,
         column_config={
-            "Quantity": st.column_config.NumberColumn("Quantity", format="%d"),
-            "Unit Price": st.column_config.NumberColumn("Unit Price", format="$%.2f"),
-            "Total Price": st.column_config.NumberColumn("Total Price", format="$%.2f"),
-            "Unit Price Threshold": st.column_config.NumberColumn(
-                "Unit Price Threshold", format="$%.2f"
+            "Document Name": st.column_config.TextColumn(
+                "Document Name",
+                help="Name of the source PDF document for this line item.",
             ),
-            "Total Threshold Price": st.column_config.NumberColumn(
-                "Total Threshold Price", format="$%.2f"
+            "Date": st.column_config.TextColumn(
+                "Date of Service",
+                help="Date when the medical service was provided.",
             ),
-            "Threshold Multiplier": st.column_config.NumberColumn(
-                "Threshold Multiplier", format="%.2f×"
+            "Medical Procedure Name": st.column_config.TextColumn(
+                "Medical Procedure Name",
+                help="Name of the medical procedure performed or drug given.",
             ),
-            "Price Difference": st.column_config.NumberColumn(
-                "Price Difference", format="$%.2f"
+            "CPT Code": st.column_config.TextColumn(
+                "CPT Code",
+                help="Standardized code for the medical procedure or service.",
+            ),
+            "Modifier": st.column_config.TextColumn(
+                "Modifier",
+                help="Additional code that provides more information about the procedure.",
+            ),
+            "Quantity": st.column_config.NumberColumn(
+                "Quantity",
+                format="%d",
+                help="Number of units or items billed for this line item.",
+            ),
+            "Unit Price": st.column_config.NumberColumn(
+                "Unit Price",
+                format="$%.2f",
+                help="Price charged per single unit.",
+            ),
+            "Total Price": st.column_config.NumberColumn(
+                "Total Price",
+                format="$%.2f",
+                help="Total billed amount (Quantity × Unit Price).",
+            ),
+            "Entity Type": st.column_config.TextColumn(
+                "Entity Type",
+                help="Classification of the line item (e.g., procedure, drug).",
             ),
             "Dosage Value": st.column_config.NumberColumn(
-                "Dosage Value", format="%.2f"
+                "Dosage Value",
+                format="%.2f",
+                help="Extracted dosage value from the medical drug item in the bill.",
             ),
-            "No. of Medicare Units": st.column_config.NumberColumn(
-                "No. of Medicare Units", format="%.2f"
+            "Dosage Unit": st.column_config.TextColumn(
+                "Dosage Unit",
+                help="Unit of the extracted dosage value from the drug(e.g., mg, ml).",
+            ),
+            "Units from Name": st.column_config.NumberColumn(
+                "Units from Name",
+                format="%.2f",
+                help="Extracted units from the medical procedure name from the bill item based on dosage value",
+            ),
+            "Page": st.column_config.NumberColumn(
+                "Page",
+                format="%d",
+                help="Page number in the PDF where this line item was found.",
             ),
             "Extraction Confidence": st.column_config.NumberColumn(
-                "Extraction Confidence", format="%d%%"
+                "Extraction Confidence",
+                format="%d%%",
+                help="Confidence of the extraction of the medical bill item from the document",
+            ),
+            "Unit Price Threshold": st.column_config.NumberColumn(
+                "Unit Price Threshold",
+                format="$%.2f",
+                help="Maximum allowed unit price before flagging based on Medicare threshold guidelines.",
+            ),
+            "Total Threshold Price": st.column_config.NumberColumn(
+                "Total Threshold Price",
+                format="$%.2f",
+                help="Maximum allowed total price for this line item based on Medicare threshold guidelines.",
+            ),
+            "Threshold Multiplier": st.column_config.NumberColumn(
+                "Threshold Multiplier",
+                format="%.2f×",
+                help="Multiplier calculated from billed price and calculated threshold price to compute thresholds.",
+            ),
+            "Price Difference": st.column_config.NumberColumn(
+                "Price Difference",
+                format="$%.2f",
+                help="Difference between billed price and threshold price.",
+            ),
+            "Dosage Value": st.column_config.NumberColumn(
+                "Dosage Value",
+                format="%.2f",
+                help="Extracted dosage value from the medical document.",
+            ),
+            "No. of Medicare Units": st.column_config.NumberColumn(
+                "No. of Medicare Units",
+                format="%.2f",
+                help="The calculated quantity of Medicare units associated with this Medical item in the bill.",
             ),
             "CPT Code Source": None,
         },
@@ -2088,35 +2165,98 @@ def render_pdf_upload_tab():
                         selection_mode="single-row",
                         key="pdf_table_selection",
                         column_config={
+                            "Document Name": st.column_config.TextColumn(
+                                "Document Name",
+                                help="Name of the source PDF document for this line item.",
+                            ),
+                            "Date": st.column_config.TextColumn(
+                                "Date of Service",
+                                help="Date when the medical service was provided.",
+                            ),
+                            "Medical Procedure Name": st.column_config.TextColumn(
+                                "Medical Procedure Name",
+                                help="Name of the medical procedure performed or drug given.",
+                            ),
+                            "CPT Code": st.column_config.TextColumn(
+                                "CPT Code",
+                                help="Standardized code for the medical procedure or service.",
+                            ),
+                            "Modifier": st.column_config.TextColumn(
+                                "Modifier",
+                                help="Additional code that provides more information about the procedure.",
+                            ),
                             "Quantity": st.column_config.NumberColumn(
-                                "Quantity", format="%d"
+                                "Quantity",
+                                format="%d",
+                                help="Number of units or items billed for this line item.",
                             ),
                             "Unit Price": st.column_config.NumberColumn(
-                                "Unit Price", format="$%.2f"
+                                "Unit Price",
+                                format="$%.2f",
+                                help="Price charged per single unit.",
                             ),
                             "Total Price": st.column_config.NumberColumn(
-                                "Total Price", format="$%.2f"
+                                "Total Price",
+                                format="$%.2f",
+                                help="Total billed amount (Quantity × Unit Price).",
                             ),
-                            "Unit Price Threshold": st.column_config.NumberColumn(
-                                "Unit Price Threshold", format="$%.2f"
-                            ),
-                            "Total Threshold Price": st.column_config.NumberColumn(
-                                "Total Threshold Price", format="$%.2f"
-                            ),
-                            "Threshold Multiplier": st.column_config.NumberColumn(
-                                "Threshold Multiplier", format="%.2f×"
-                            ),
-                            "Price Difference": st.column_config.NumberColumn(
-                                "Price Difference", format="$%.2f"
+                            "Entity Type": st.column_config.TextColumn(
+                                "Entity Type",
+                                help="Classification of the line item (e.g., procedure, drug).",
                             ),
                             "Dosage Value": st.column_config.NumberColumn(
-                                "Dosage Value", format="%.2f"
+                                "Dosage Value",
+                                format="%.2f",
+                                help="Extracted dosage value from the medical drug item in the bill.",
                             ),
-                            "No. of Medicare Units": st.column_config.NumberColumn(
-                                "No. of Medicare Units", format="%.2f"
+                            "Dosage Unit": st.column_config.TextColumn(
+                                "Dosage Unit",
+                                help="Unit of the extracted dosage value from the drug(e.g., mg, ml).",
+                            ),
+                            "Units from Name": st.column_config.NumberColumn(
+                                "Units from Name",
+                                format="%.2f",
+                                help="Extracted units from the medical procedure name from the bill item based on dosage value",
+                            ),
+                            "Page": st.column_config.NumberColumn(
+                                "Page",
+                                format="%d",
+                                help="Page number in the PDF where this line item was found.",
                             ),
                             "Extraction Confidence": st.column_config.NumberColumn(
-                                "Extraction Confidence", format="%d%%"
+                                "Extraction Confidence",
+                                format="%d%%",
+                                help="Confidence of the extraction of the medical bill item from the document",
+                            ),
+                            "Unit Price Threshold": st.column_config.NumberColumn(
+                                "Unit Price Threshold",
+                                format="$%.2f",
+                                help="Maximum allowed unit price before flagging based on Medicare threshold guidelines.",
+                            ),
+                            "Total Threshold Price": st.column_config.NumberColumn(
+                                "Total Threshold Price",
+                                format="$%.2f",
+                                help="Maximum allowed total price for this line item based on Medicare threshold guidelines.",
+                            ),
+                            "Threshold Multiplier": st.column_config.NumberColumn(
+                                "Threshold Multiplier",
+                                format="%.2f×",
+                                help="Multiplier calculated from billed price and calculated threshold price to compute thresholds.",
+                            ),
+                            "Price Difference": st.column_config.NumberColumn(
+                                "Price Difference",
+                                format="$%.2f",
+                                help="Difference between billed price and threshold price.",
+                            ),
+                            "Dosage Value": st.column_config.NumberColumn(
+                                "Dosage Value",
+                                format="%.2f",
+                                help="Extracted dosage value from the medical document.",
+                            ),
+                            "No. of Medicare Units": st.column_config.NumberColumn(
+                                "No. of Medicare Units",
+                                format="%.2f",
+                                help="The calculated quantity of Medicare units associated with this Medical item in the bill.",
                             ),
                             "CPT Code Source": None,
                         },
@@ -2146,35 +2286,98 @@ def render_pdf_upload_tab():
                         use_container_width=True,
                         key="pdf_table_selection_edited",
                         column_config={
+                            "Document Name": st.column_config.TextColumn(
+                                "Document Name",
+                                help="Name of the source PDF document for this line item.",
+                            ),
+                            "Date": st.column_config.TextColumn(
+                                "Date of Service",
+                                help="Date when the medical service was provided.",
+                            ),
+                            "Medical Procedure Name": st.column_config.TextColumn(
+                                "Medical Procedure Name",
+                                help="Name of the medical procedure performed or drug given.",
+                            ),
+                            "CPT Code": st.column_config.TextColumn(
+                                "CPT Code",
+                                help="Standardized code for the medical procedure or service.",
+                            ),
+                            "Modifier": st.column_config.TextColumn(
+                                "Modifier",
+                                help="Additional code that provides more information about the procedure.",
+                            ),
                             "Quantity": st.column_config.NumberColumn(
-                                "Quantity", format="%d"
+                                "Quantity",
+                                format="%d",
+                                help="Number of units or items billed for this line item.",
                             ),
                             "Unit Price": st.column_config.NumberColumn(
-                                "Unit Price", format="$%.2f"
+                                "Unit Price",
+                                format="$%.2f",
+                                help="Price charged per single unit.",
                             ),
                             "Total Price": st.column_config.NumberColumn(
-                                "Total Price", format="$%.2f"
+                                "Total Price",
+                                format="$%.2f",
+                                help="Total billed amount (Quantity × Unit Price).",
                             ),
-                            "Unit Price Threshold": st.column_config.NumberColumn(
-                                "Unit Price Threshold", format="$%.2f"
-                            ),
-                            "Total Threshold Price": st.column_config.NumberColumn(
-                                "Total Threshold Price", format="$%.2f"
-                            ),
-                            "Threshold Multiplier": st.column_config.NumberColumn(
-                                "Threshold Multiplier", format="%.2f×"
-                            ),
-                            "Price Difference": st.column_config.NumberColumn(
-                                "Price Difference", format="$%.2f"
+                            "Entity Type": st.column_config.TextColumn(
+                                "Entity Type",
+                                help="Classification of the line item (e.g., procedure, drug).",
                             ),
                             "Dosage Value": st.column_config.NumberColumn(
-                                "Dosage Value", format="%.2f"
+                                "Dosage Value",
+                                format="%.2f",
+                                help="Extracted dosage value from the medical drug item in the bill.",
                             ),
-                            "No. of Medicare Units": st.column_config.NumberColumn(
-                                "No. of Medicare Units", format="%.2f"
+                            "Dosage Unit": st.column_config.TextColumn(
+                                "Dosage Unit",
+                                help="Unit of the extracted dosage value from the drug(e.g., mg, ml).",
+                            ),
+                            "Units from Name": st.column_config.NumberColumn(
+                                "Units from Name",
+                                format="%.2f",
+                                help="Extracted units from the medical procedure name from the bill item based on dosage value",
+                            ),
+                            "Page": st.column_config.NumberColumn(
+                                "Page",
+                                format="%d",
+                                help="Page number in the PDF where this line item was found.",
                             ),
                             "Extraction Confidence": st.column_config.NumberColumn(
-                                "Extraction Confidence", format="%d%%"
+                                "Extraction Confidence",
+                                format="%d%%",
+                                help="Confidence of the extraction of the medical bill item from the document",
+                            ),
+                            "Unit Price Threshold": st.column_config.NumberColumn(
+                                "Unit Price Threshold",
+                                format="$%.2f",
+                                help="Maximum allowed unit price before flagging based on Medicare threshold guidelines.",
+                            ),
+                            "Total Threshold Price": st.column_config.NumberColumn(
+                                "Total Threshold Price",
+                                format="$%.2f",
+                                help="Maximum allowed total price for this line item based on Medicare threshold guidelines.",
+                            ),
+                            "Threshold Multiplier": st.column_config.NumberColumn(
+                                "Threshold Multiplier",
+                                format="%.2f×",
+                                help="Multiplier calculated from billed price and calculated threshold price to compute thresholds.",
+                            ),
+                            "Price Difference": st.column_config.NumberColumn(
+                                "Price Difference",
+                                format="$%.2f",
+                                help="Difference between billed price and threshold price.",
+                            ),
+                            "Dosage Value": st.column_config.NumberColumn(
+                                "Dosage Value",
+                                format="%.2f",
+                                help="Extracted dosage value from the medical document.",
+                            ),
+                            "No. of Medicare Units": st.column_config.NumberColumn(
+                                "No. of Medicare Units",
+                                format="%.2f",
+                                help="The calculated quantity of Medicare units associated with this Medical item in the bill.",
                             ),
                             "CPT Code Source": None,
                         },
