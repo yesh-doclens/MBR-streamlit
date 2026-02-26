@@ -1,0 +1,123 @@
+{
+  "full_medical_data": {
+    "claim_file": "GP-F",
+    "incident_date": "08/05/2022",
+    "pre_accident_treatments": [],
+    "post_accident_treatments": [],
+    "accident_related_conditions": [
+      "T85 - Electrical Stimulation",
+      "M25 - Pain In Left Shoulder",
+      "Z04 - Accident",
+      "M25.512 - Pain In Left Shoulder",
+      "V87 - Motor Vehicle Collison",
+      "S42.002A - Left Clavicle Injury",
+      "M25.512 - Pain"
+    ],
+    "preexisting_conditions": [
+      "F40 - Claustrophobic",
+      "Z98.2 - Cerebrospinal Fluid Drainage Device",
+      "I63.9 - Stroke",
+      "F33 - Mdd",
+      "G47 - Obstructive Sleep Apnea Of Fluid",
+      "I10 - Hypertension",
+      "I63 - Cva",
+      "F33.1 - Major Depressive Disorder",
+      "E29 - Testicular Hypofunction",
+      "E66 - Obesity"
+    ],
+    "treating_providers": [
+      "BRIDGEWAY DIAGNOSTIC RADIOLOGY",
+      "Cameron",
+      "Dennis Harden",
+      "Dennis K",
+      "Dennis K Harden",
+      "Dennis K.",
+      "Donnie K. Hardon",
+      "Jack Hughston Memorial Hospital",
+      "Kersey",
+      "LLC",
+      "MD",
+      "MEDMONT PHYSICIANS",
+      "Maria Fe Godbey",
+      "OSHINOWO ABAYOMI",
+      "PIEDMONT PHYSICIANS COLUMBUS STADIUM DRIVE"
+    ],
+    "accident_related_medications": [
+      "ZANAFLEX",
+      "Robaxin",
+      "Dexamethasone",
+      "tiZANidine",
+      "ketorolac",
+      "Prednisone",
+      "naproxen",
+      "Ibuprofen",
+      "Methocarbamol"
+    ],
+    "preexisting_medications": [
+      "ADIPEX-P",
+      "NORVASC",
+      "lisinopriL-hydrochlorothiazide",
+      "phentermine",
+      "amLODIPine",
+      "GLUCOPHAGE",
+      "metFORMIN",
+      "ZESTORETIC",
+      "NAPROSYN"
+    ]
+  },
+  "bill_review_context": {
+    "claim_file": "GP-F",
+    "incident_date": "08/05/2022",
+    "pre_accident_treatment_dates": [],
+    "post_accident_treatment_dates": [],
+    "accident_conditions": [
+      "T85 - Electrical Stimulation",
+      "M25 - Pain In Left Shoulder",
+      "Z04 - Accident",
+      "M25.512 - Pain In Left Shoulder",
+      "V87 - Motor Vehicle Collison",
+      "S42.002A - Left Clavicle Injury",
+      "M25.512 - Pain"
+    ],
+    "preexisting_conditions": [
+      "F40 - Claustrophobic",
+      "Z98.2 - Cerebrospinal Fluid Drainage Device",
+      "I63.9 - Stroke",
+      "F33 - Mdd",
+      "G47 - Obstructive Sleep Apnea Of Fluid",
+      "I10 - Hypertension",
+      "I63 - Cva",
+      "F33.1 - Major Depressive Disorder",
+      "E29 - Testicular Hypofunction",
+      "E66 - Obesity"
+    ],
+    "authorized_providers": [
+      "BRIDGEWAY DIAGNOSTIC RADIOLOGY",
+      "Cameron",
+      "Dennis Harden",
+      "Dennis K",
+      "Dennis K Harden",
+      "Dennis K.",
+      "Donnie K. Hardon",
+      "Jack Hughston Memorial Hospital",
+      "Kersey",
+      "LLC",
+      "MD",
+      "MEDMONT PHYSICIANS",
+      "Maria Fe Godbey",
+      "OSHINOWO ABAYOMI",
+      "PIEDMONT PHYSICIANS COLUMBUS STADIUM DRIVE"
+    ],
+    "accident_medications": [
+      "ZANAFLEX",
+      "Robaxin",
+      "Dexamethasone",
+      "tiZANidine",
+      "ketorolac",
+      "Prednisone",
+      "naproxen",
+      "Ibuprofen",
+      "Methocarbamol"
+    ]
+  }
+}

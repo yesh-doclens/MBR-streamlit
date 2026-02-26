@@ -1,0 +1,62 @@
+{
+    "XR CLAVICLE LT": {
+        "category": "Necessary but Not Medically stated",
+        "reason": "Left clavicle injury identified in accident conditions but no provider confirmation of accident causation"
+    },
+    "XR SHOULDER 2V/MORE": {
+        "category": "Necessary but Not Medically stated",
+        "reason": "Left shoulder pain identified in accident conditions but no provider confirmation of accident causation"
+    },
+    "DEXAMETHASONE 4MG/ML": {
+        "category": "Necessary but Not Medically stated",
+        "reason": "Anti-inflammatory for accident-related shoulder/clavicle injuries but no provider confirmation"
+    },
+    "KETOROLAC 60MG VIAL": {
+        "category": "Necessary but Not Medically stated",
+        "reason": "Pain medication for accident-related injuries but no provider confirmation of accident causation"
+    },
+    "METHOCARBAMOL 500MG": {
+        "category": "Necessary but Not Medically stated",
+        "reason": "Muscle relaxant for accident-related injuries but no provider confirmation of accident causation"
+    },
+    "ER LEVEL FOUR - 25": {
+        "category": "Necessary but Not Medically stated",
+        "reason": "Emergency care following motor vehicle accident but no provider confirmation of accident causation"
+    },
+    "IM INJECTION": {
+        "category": "Necessary but Not Medically stated",
+        "reason": "Administration of accident-related medications but no provider confirmation of accident causation"
+    },
+    "PR EST EVAL VISIT LVL 3": {
+        "category": "Necessary but Not Medically stated",
+        "reason": "Post-accident evaluation for identified injuries but no provider confirmation of accident causation"
+    },
+    "MRI joint upper extremity w/o dye": {
+        "category": "Not necessary",
+        "reason": "Listed as pre-existing condition and related to prior stroke affecting right upper extremity"
+    },
+    "ALS Emergency Transport": {
+        "category": "Necessary but Not Medically stated",
+        "reason": "Transport following motor vehicle accident but no provider confirmation of accident causation"
+    },
+    "Mileage": {
+        "category": "Necessary but Not Medically stated",
+        "reason": "Related to emergency transport for motor vehicle accident but no provider confirmation"
+    },
+    "PT EVAL: LOW COMPLEX 20": {
+        "category": "Necessary but Not Medically stated",
+        "reason": "Physical therapy evaluation for accident-related shoulder injury but no provider confirmation"
+    },
+    "Therapeutic Exercise": {
+        "category": "Necessary but Not Medically stated",
+        "reason": "Treatment for accident-related shoulder injury but no provider confirmation of accident causation"
+    },
+    "Electrical Stimulation - Not": {
+        "category": "Necessary but Not Medically stated",
+        "reason": "Listed in accident conditions for pain treatment but no provider confirmation of accident causation"
+    },
+    "Neuromuscular Re-ed": {
+        "category": "Necessary but Not Medically stated",
+        "reason": "Treatment for accident-related injuries but no provider confirmation of accident causation"
+    }
+}

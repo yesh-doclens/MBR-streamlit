@@ -1,0 +1,36 @@
+{
+  "cause": [
+    "V49.9XXA - Driver Injured In Collision"
+  ],
+  "accident-related": [
+    "V59.9XXD - Motor Vehicle",
+    "V89.2XXA - Motor Vehicle Collision Injury V87 - Motor Vehicle Collison V89.2XXA - Person Injured In Unspecified Motor-Vehicle",
+    "V89.2XXA - Motor Vehicular",
+    "V89.2XXA - Person Injured In Unspecified Motor-Vehicle",
+    "V49.9XXA - Motor Vehicle",
+    "V49.9XXA - Driver Injured In Collision With Unspecified Motor Vehicles In Ao Traffic",
+    "V49.40XA - Driver Injured In Collision With Unspecified Motor Vehicles In Traffic",
+    "V89 - Dt Mva V89.2XXA - Motor Vehicle",
+    "S42.002A - Left Clavicle Injury",
+    "M25.512 - Pain M25 - Pain In Left Shoulder M25.512 - Pain In Left Shoulder",
+    "Z04 - Accident",
+    "T85 - Electrical Stimulation"
+  ],
+  "pre-existing condition": [
+    "D49 - Brain Tumor D49.6 - Brain Tumor",
+    "I69 - Stroke",
+    "I60 - Hc",
+    "F33 - Mdd",
+    "F33.1 - Major Depressive Disorder",
+    "F32 - Mdd",
+    "F40 - Claustrophobic",
+    "E29 - Testicular Hypofunction",
+    "E66 - Obesity",
+    "G47.33 - Obstructive Sleep Apnea",
+    "G47 - Obstructive Sleep Apnea Of Fluid",
+    "Z98.2 - Cerebrospinal Fluid Drainage Device",
+    "T84 - Mrl Upr Extrem W/O Dye",
+    "H54 - Blind"
+  ],
+  "comorbidity": []
+}

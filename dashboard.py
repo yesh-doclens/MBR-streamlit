@@ -2152,11 +2152,27 @@ def render_pdf_upload_tab():
             with vcol2:
                 tab_1, tab_2 = st.tabs(["AI Generated", "User Edited"])
                 with tab_1:
+                    df_with_flags = df.drop(columns=["Highlight Geometry"]).copy()
+                    FLAG_MAP = {
+                        "Necessary and Medically stated": "🟢",
+                        "Necessary but Not Medically stated": "🟡",
+                        "Not necessary": "🔴",
+                    }
+
+                    # Drop helper columns NOW (before styling)
+                    df_with_flags["Flag"] = df_with_flags["Necessity Flag"].map(
+                        FLAG_MAP
+                    )
+
+                    # Move Flag to first position
+                    df_with_flags.insert(0, "Flag", df_with_flags.pop("Flag"))
+
                     # Using selection mode if supported, otherwise just a selectbox
                     styled_df = display_dataframe_with_color_coding(
-                        df.drop(columns=["Highlight Geometry"]),
+                        df_with_flags,
                         key_prefix="pdf_table",
                     )
+
                     selection = st.dataframe(
                         styled_df,
                         hide_index=True,
@@ -2165,6 +2181,11 @@ def render_pdf_upload_tab():
                         selection_mode="single-row",
                         key="pdf_table_selection",
                         column_config={
+                            "Flag": st.column_config.TextColumn(
+                                "Necessity Flag",
+                                width="small",
+                                help="🟩 Necessary & Medically Stated | 🟨 Necessary but not medically stated | 🟥 Not necessary ",
+                            ),
                             "Document Name": st.column_config.TextColumn(
                                 "Document Name",
                                 help="Name of the source PDF document for this line item.",

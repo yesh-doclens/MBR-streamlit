@@ -1,0 +1,65 @@
+{
+  "full_claim_data": {
+    "claim_file": "GP-File-2",
+    "incident_date": "08-05-2022",
+    "fnol_date": "08-05-2022",
+    "claimant_name": "Roger Pouncey",
+    "accident_description": "On August 5, 2022, at approximately 20:14 (8:14 PM), a motor vehicle collision occurred when another vehicle crossed the centerline and struck the patient's vehicle on the driver's side [26][27][28]. The patient, who was driving and restrained at the time, experienced a T-bone impact that did not trigger airbag deployment and did not result in loss of consciousness [26][28]. Following the collision, the patient suffered left shoulder pain and restricted movement, and was subsequently transported",
+    "accident_related_injuries": [
+      "Acute pain in left shoulder",
+      "Motor vehicle accident injury (as a restrained driver)",
+      "Unspecified motor vehicle accident-related injury"
+    ],
+    "preexisting_conditions": [
+      "Stroke affecting right upper extremity",
+      "Brain tumor from childhood (at age 7)",
+      "Blindness in right eye",
+      "High blood pressure",
+      "Appendectomy (performed in 1998)"
+    ],
+    "body_parts_injured": [
+      "shoulder",
+      "left shoulder"
+    ],
+    "medical_providers": [
+      "Dennis K Harden, MD",
+      "Abayomi Oshinowo, MD (ED Physician)",
+      "Jack Hughston Memorial Hospital",
+      "Piedmont Physicians Columbus Stadium Drive",
+      "Maria Fe Godbey, PT, DPT, NCS (Physical Therapist)"
+    ],
+    "total_economic_damages": 6605.0,
+    "past_medical_expenses": 6605.0,
+    "future_medical_expenses": "Not specified"
+  },
+  "bill_review_context": {
+    "claim_file": "GP-File-2",
+    "incident_date": "08-05-2022",
+    "claimant_name": "Roger Pouncey",
+    "acceptable_injuries": [
+      "Acute pain in left shoulder",
+      "Motor vehicle accident injury (as a restrained driver)",
+      "Unspecified motor vehicle accident-related injury"
+    ],
+    "excluded_conditions": [
+      "Stroke affecting right upper extremity",
+      "Brain tumor from childhood (at age 7)",
+      "Blindness in right eye",
+      "High blood pressure",
+      "Appendectomy (performed in 1998)"
+    ],
+    "affected_body_parts": [
+      "shoulder",
+      "left shoulder"
+    ],
+    "authorized_providers": [
+      "Dennis K Harden, MD",
+      "Abayomi Oshinowo, MD (ED Physician)",
+      "Jack Hughston Memorial Hospital",
+      "Piedmont Physicians Columbus Stadium Drive",
+      "Maria Fe Godbey, PT, DPT, NCS (Physical Therapist)"
+    ],
+    "total_approved_amount": 6605.0,
+    "accident_summary": "On August 5, 2022, at approximately 20:14 (8:14 PM), a motor vehicle collision occurred when another vehicle crossed the centerline and struck the patient's vehicle on the driver's side [26][27][28]. The patient, who was driving and restrained at the time, experienced a T-bone impact that did not trigger airbag deployment and did not result in loss of consciousness [26][28]. Following the collision, the patient suffered left shoulder pain and restricted movement, and was subsequently transported"
+  }
+}
