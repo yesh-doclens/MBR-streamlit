@@ -23,6 +23,11 @@ from pypdf.generic import (
     DictionaryObject,
     TextStringObject,
 )
+from helpers.extract_content_from_summaries import (
+    extract_damages_injuries_from_claim_summary,
+    extract_medical_conditions_from_medical_summary,
+    get_necessity_json,
+)
 from rapidfuzz import process, fuzz
 from io import BytesIO
 import uuid
@@ -47,8 +52,17 @@ def load_demo_files():
     ) as f:
         json_bytes = f.read()
 
+    with open(os.path.join(demo_base, "GP-File-2-claim_summary.pdf"), "rb") as f:
+        claim_summary_bytes = f.read()
+
+    with open(os.path.join(demo_base, "medical_entities.json"), "rb") as f:
+        medical_entities_bytes = f.read()
+
     st.session_state["demo_pdf"] = BytesIO(pdf_bytes)
     st.session_state["demo_pdf"].name = "GP2.pdf"
+
+    st.session_state["demo_medical_entities"] = BytesIO(medical_entities_bytes)
+    st.session_state["demo_medical_entities"].name = "medical_entities.json"
 
     st.session_state["demo_csv"] = BytesIO(csv_bytes)
     st.session_state["demo_csv"].name = "GP2 Page Classification - Sheet1.csv"
@@ -57,6 +71,9 @@ def load_demo_files():
     st.session_state["demo_json"].name = (
         "b98d314f-2b46-49f3-9986-1dc7249cb449__document_uuid__GP2.json"
     )
+
+    st.session_state["demo_claim_summary"] = BytesIO(claim_summary_bytes)
+    st.session_state["demo_claim_summary"].name = "GP-File-2-claim_summary.pdf"
 
     st.session_state["use_demo_files"] = True
 
@@ -1968,7 +1985,7 @@ def render_pdf_upload_tab():
     st.info("Upload the Medical Record PDF")
 
     # 3-way file uploader
-    ucol1, ucol2, ucol3 = st.columns(3)
+    ucol1, ucol2, ucol3, ucol4, ucol5 = st.columns(5)
     with ucol1:
         pdf_upload = st.file_uploader("1. Upload PDF", type=["pdf"], key="pdf_batch")
 
@@ -1982,6 +1999,20 @@ def render_pdf_upload_tab():
             "3. Upload Textract Blocks (JSON)", type=["json"], key="json_batch"
         )
 
+    with ucol4:
+        claim_summary_upload = st.file_uploader(
+            "4. (Optional) Upload Claim Summary (PDF)",
+            type=["pdf"],
+            key="claim_summary_batch",
+        )
+
+    with ucol5:
+        medical_entities_upload = st.file_uploader(
+            "5. (Optional) Upload Medical Entities (JSON)",
+            type=["json"],
+            key="entities_batch",
+        )
+
     if st.button("🧪 Load Demo Files", use_container_width=True):
         load_demo_files()
         st.success("Demo files loaded!")
@@ -1991,8 +2022,42 @@ def render_pdf_upload_tab():
     pdf_file = st.session_state.get("demo_pdf") if use_demo else pdf_upload
     csv_file = st.session_state.get("demo_csv") if use_demo else csv_upload
     json_file = st.session_state.get("demo_json") if use_demo else json_upload
+    claim_summary_file = (
+        st.session_state.get("demo_claim_summary") if use_demo else claim_summary_upload
+    )
+    medical_entities_file = (
+        st.session_state.get("demo_medical_entities")
+        if use_demo
+        else medical_entities_upload
+    )
 
-    if pdf_file and csv_file and json_file:
+    # Save the files in tmp folder
+
+    tmp_folder = "./tmp/"
+    os.makedirs(tmp_folder, exist_ok=True)
+    if pdf_file:
+        with open(os.path.join(tmp_folder, pdf_file.name), "wb") as f:
+            f.write(pdf_file.getvalue())
+    if csv_file:
+        with open(os.path.join(tmp_folder, csv_file.name), "wb") as f:
+            f.write(csv_file.getvalue())
+    if json_file:
+        with open(os.path.join(tmp_folder, json_file.name), "wb") as f:
+            f.write(json_file.getvalue())
+    if claim_summary_file:
+        with open(os.path.join(tmp_folder, claim_summary_file.name), "wb") as f:
+            f.write(claim_summary_file.getvalue())
+    if medical_entities_file:
+        with open(os.path.join(tmp_folder, medical_entities_file.name), "wb") as f:
+            f.write(medical_entities_file.getvalue())
+
+    if (
+        pdf_file
+        and csv_file
+        and json_file
+        and claim_summary_file
+        and medical_entities_file
+    ):
         cache_key_user_edited = (
             f"batch_edited_{pdf_file.name}_{csv_file.name}_{json_file.name}"
         )
@@ -2000,11 +2065,38 @@ def render_pdf_upload_tab():
         if st.button("🚀 Process PDF Medical Bills", use_container_width=True):
             with st.spinner("Analyzing pages and extracting data..."):
                 try:
+                    medical_entities_file_output_path = (
+                        "./public/pdf/"
+                        + medical_entities_file.name.split(".json")[0]
+                        + "_output.json"
+                        if medical_entities_file
+                        else ""
+                    )
+                    claim_summary_file_output_path = (
+                        "./public/pdf/"
+                        + claim_summary_file.name.split(".pdf")[0]
+                        + "_output.json"
+                        if claim_summary_file
+                        else ""
+                    )
+
+                    necessity_json_file_output_path = (
+                        "./public/pdf"
+                        + pdf_file.name.split(".pdf")[0]
+                        + "_necessity.json"
+                    )
+
                     cached_df = check_df_cache(cache_key)
                     cached_df_edited = check_df_cache(cache_key_user_edited)
                     pdf_bytes = pdf_file.getvalue()
 
-                    if cached_df is not None:
+                    if (
+                        cached_df is not None
+                        and medical_entities_file
+                        and claim_summary_file
+                        and os.path.exists(medical_entities_file_output_path)
+                        and os.path.exists(claim_summary_file_output_path)
+                    ):
                         st.info("Using cached results for this file combination.")
                         final_df = cached_df
                         if cached_df_edited is not None:
@@ -2099,7 +2191,77 @@ def render_pdf_upload_tab():
 
                         final_df["Page"] = df_pages
                         final_df["Highlight Geometry"] = df_geometries
+
+                        # Do Necessity Flag
+                        claim_summary_pdf_path = os.path.join(
+                            tmp_folder, claim_summary_file.name
+                        )
+                        medical_entities_path = os.path.join(
+                            tmp_folder, medical_entities_file.name
+                        )
+                        with open(medical_entities_path, "r") as f:
+                            medical_entities = json.load(f)
+
+                        medical_entities_output = (
+                            extract_medical_conditions_from_medical_summary(
+                                medical_entities
+                            )
+                        )
+                        claim_summary_output = (
+                            extract_damages_injuries_from_claim_summary(
+                                claim_summary_pdf_path
+                            )
+                        )
+
+                        with open(medical_entities_file_output_path, "w") as f:
+                            json.dump(medical_entities_output, f, indent=2)
+
+                        with open(claim_summary_file_output_path, "w") as f:
+                            json.dump(claim_summary_output, f, indent=2)
+
+                        if os.path.exists(necessity_json_file_output_path):
+                            with open(necessity_json_file_output_path, "r") as f:
+                                necessity_json = json.load(f)
+                        else:
+                            session = boto3.Session(
+                                aws_access_key_id=st.session_state["aws_credentials"][
+                                    "aws_access_key"
+                                ],
+                                aws_secret_access_key=st.session_state[
+                                    "aws_credentials"
+                                ]["aws_secret_key"],
+                                aws_session_token=st.session_state["aws_credentials"][
+                                    "aws_session_token"
+                                ],
+                                region_name="us-east-1",
+                            )
+                            bedrock_client = session.client(
+                                service_name="bedrock-runtime", region_name="us-east-1"
+                            )
+                            necessity_json = get_necessity_json(
+                                bedrock_client,
+                                medical_entities_output,
+                                claim_summary_output,
+                                final_df["Medical Procedure Name"].unique(),
+                            )
+
+                        final_df["Necessity Flag"] = final_df[
+                            "Medical Procedure Name"
+                        ].apply(
+                            lambda x: necessity_json.get(x, {}).get(
+                                "category", "Not categorized"
+                            )
+                        )
+                        final_df["Necessity Reason"] = final_df[
+                            "Medical Procedure Name"
+                        ].apply(
+                            lambda x: necessity_json.get(x, {}).get(
+                                "reason", "No reason provided"
+                            )
+                        )
+
                         final_df_edited = final_df.copy()
+
                         # Save to cache
                         save_df_to_cache(cache_key, final_df)
                         save_df_to_cache(cache_key_user_edited, final_df_edited)

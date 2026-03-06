@@ -1,0 +1,2674 @@
+{
+    "patients": [
+        {
+            "patient_details": {
+                "name": "None"
+            },
+            "medical_history": [
+                {
+                    "generated_content": "Patient was a 36-year-old male who presented to the ER via ambulatory transport with a shoulder injury DT MVA. He experienced acute pain and a contusion in the left shoulder, resulting from a motor vehicle collision where he was the driver.",
+                    "answer": "DT MVA",
+                    "condition_type": "Cause",
+                    "content": " old White Male presents to ER via Ambulatory with ao complaints of Shoulder Injury DT MVA. 21:18 The patient or guardian complains of contusion, pain.",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "V89",
+                    "begin_offset": 3950,
+                    "linked_date": "08/05/2022",
+                    "medical_providers_list": [
+                        "Jack Hughston Memorial Hospital"
+                    ],
+                    "page_number": 6,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 1002,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 4866,
+                            "output_tokens": 115
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Jack Hughston experienced a motor vehicle collison resulting in a left shoulder injury. He presented to the emergency room with acute pain, decreased range of motion, and difficulty raising his arm. The incident occurred on a street or driveway, with symptoms emerging approximately one hour prior to arrival.",
+                    "answer": "motor vehicle collison",
+                    "condition_type": "Cause",
+                    "content": " shoulder. Context: The problem was sustained on a street or driveway, resulted from a motor vehicle collison, in which the patient was the driver, The patient",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "V87",
+                    "begin_offset": 4170,
+                    "linked_date": "08/05/2022",
+                    "medical_providers_list": [
+                        "Jack Hughston Memorial Hospital"
+                    ],
+                    "patient": {
+                        "patient_list": [
+                            "Jack Hughston"
+                        ],
+                        "type": "others"
+                    },
+                    "page_number": 6,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 975,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 4808,
+                            "output_tokens": 125
+                        }
+                    }
+                },
+                {
+                    "generated_content": null,
+                    "answer": "Condition: Good",
+                    "condition_type": null,
+                    "content": " 22:55:01\nTo:,\n2022-11-17 11:04:47 EST\n18666747481\nFrom: Production Primary\nao\nSymptoms: have improved\nao\nCondition: Good\nao\nDiagnosis\n- Pain in left shoulder ao\n- Driver",
+                    "is_true": false,
+                    "classified_as": "Person is Not Suffering",
+                    "icd10cm_concept_code": "R68",
+                    "begin_offset": 7249,
+                    "linked_date": "08/05/2022",
+                    "medical_providers_list": null,
+                    "page_number": 8,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 1041,
+                            "output_tokens": 10
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient was involved in a driver injured in collision with unspecified motor vehicles in ao traffic accident. The patient experienced left shoulder pain, received medical screening, and was discharged home with medications and instructions to follow up with a private physician as needed.",
+                    "answer": "Driver injured in collision with unspecified motor vehicles in ao\ntraffic accident",
+                    "condition_type": "Cause",
+                    "content": " have improved\nao\nCondition: Good\nao\nDiagnosis\n- Pain in left shoulder ao\n- Driver injured in collision with unspecified motor vehicles in ao\ntraffic accident, initial encounter\nFollowup:\nao\n- With: Private Physician\n-",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "V49.9XXA",
+                    "begin_offset": 7307,
+                    "linked_date": "11/17/2022",
+                    "medical_providers_list": [],
+                    "page_number": 8,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 2770,
+                            "output_tokens": 17
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 3676,
+                            "output_tokens": 190
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient was involved in a driver injured in collision with unspecified motor vehicles in ao traffic accident, initial encounter. Diagnosed with left shoulder pain, medically screened, and received medications including ketorolac, Methocarbamol, and Dexamethasone. Discharged home with good condition and follow-up instructions.",
+                    "answer": "Driver injured in collision with unspecified motor vehicles in ao\ntraffic accident, initial encounter",
+                    "condition_type": "Cause",
+                    "content": " have improved\nao\nCondition: Good\nao\nDiagnosis\n- Pain in left shoulder ao\n- Driver injured in collision with unspecified motor vehicles in ao\ntraffic accident, initial encounter\nFollowup:\nao\n- With: Private Physician\n- When: As needed",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "V49.9XXA",
+                    "begin_offset": 7307,
+                    "linked_date": "08/06/2022",
+                    "medical_providers_list": [],
+                    "page_number": 8,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 1288,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 4537,
+                            "output_tokens": 123
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient experienced a Motor Vehicle Collision Injury resulting in left shoulder pain. Discharged home with good condition, prescribed pain management medications, and advised to follow up with a private physician as needed for potential worsening of symptoms.",
+                    "answer": "Motor Vehicle Collision Injury",
+                    "condition_type": "Cause",
+                    "content": " of condition\nDischarge Instructions:\n- Discharge Summary Sheet\nao\n- Shoulder Pain\nao\n- Motor Vehicle Collision Injury, Adult, Easy-to-Read ao\nForms:\n- Medication Reconciliation Form\nao",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "V89.2XXA",
+                    "begin_offset": 7573,
+                    "linked_date": "11/17/2022",
+                    "medical_providers_list": [],
+                    "page_number": 8,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 1047,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 4289,
+                            "output_tokens": 98
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient was involved in a driver injured in collision with unspecified motor vehicles in traffic accident, initial encounter. The emergency department treated shoulder pain related to the motor vehicle incident and recommended follow-up with a private physician as needed.",
+                    "answer": "Driver injured in collision with unspecified motor vehicles in traffic accident, initial encounter",
+                    "condition_type": "Cause",
+                    "content": " care center visit\nCare provided by Oshinowo, Abayomi, MD\nDiagnosis Pain in left shoulder, Driver injured in collision with unspecified motor vehicles in traffic accident, initial encounter\nDISCHARGE INSTRUCTIONS | FORMS\nShoulder Pain Motor Vehicle Collision Injury,",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "V49.40XA",
+                    "begin_offset": 9146,
+                    "linked_date": "08/05/2022",
+                    "medical_providers_list": [
+                        "Jack Hughston Memorial Hospital"
+                    ],
+                    "page_number": 9,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 1094,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 4557,
+                            "output_tokens": 104
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient experienced a Motor Vehicle Collision Injury resulting in left shoulder pain. Emergency care was provided, with recommendations to follow up with a private physician as needed and monitor potential worsening of condition.",
+                    "answer": "Motor Vehicle Collision Injury",
+                    "condition_type": "Cause",
+                    "content": " unspecified motor vehicles in traffic accident, initial encounter\nDISCHARGE INSTRUCTIONS | FORMS\nShoulder Pain Motor Vehicle Collision Injury, Adult, Easy-to-Read | Medication Reconciliation Form\nFOLLOW UP INSTRUCTIONS",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "V89.2XXA",
+                    "begin_offset": 9290,
+                    "linked_date": "08/05/2022",
+                    "medical_providers_list": [
+                        "Jack Hughston Memorial Hospital"
+                    ],
+                    "page_number": 9,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 929,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 4415,
+                            "output_tokens": 98
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient was involved in a motor vehicle Collision Injury, experiencing left shoulder pain as a driver in a traffic accident during an initial encounter, requiring follow-up medical care and potential medication management.",
+                    "answer": "Collision Injury",
+                    "condition_type": "Cause",
+                    "content": " vehicles in traffic accident, initial encounter\nDISCHARGE INSTRUCTIONS | FORMS\nShoulder Pain Motor Vehicle Collision Injury, Adult, Easy-to-Read | Medication Reconciliation Form\nFOLLOW UP INSTRUCTIONS",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "V89.2XXA",
+                    "begin_offset": 9304,
+                    "linked_date": "08/05/2022",
+                    "medical_providers_list": [
+                        "Jack Hughston Memorial Hospital"
+                    ],
+                    "page_number": 9,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 895,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 4381,
+                            "output_tokens": 97
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient underwent an X-ray of the left clavicle following an MVA. The radiographic examination revealed no acute fractures or dislocations, with both glenohumeral and acromioclavicular joints remaining intact. The study was conclusively reported as negative.",
+                    "answer": "MVA",
+                    "condition_type": "Cause",
+                    "content": " Reporting Physician: Kersey, Cameron\n## Report Text\nLeft clavicle 2 views\nIndication: Status post MVA, left clavicle injury.\nFindings: 2 views left clavicle were",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "V89",
+                    "begin_offset": 11500,
+                    "linked_date": "08/05/2022",
+                    "medical_providers_list": [
+                        "Jack Hughston Memorial Hospital",
+                        "OSHINOWO",
+                        "ABAYOMI",
+                        "Kersey",
+                        "Cameron"
+                    ],
+                    "page_number": 11,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 1026,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 4127,
+                            "output_tokens": 129
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient underwent an X-ray examination following a motor vehicle accident (MVA) with a left clavicle injury. The radiology report revealed no acute fractures or dislocations, with the glenohumeral and acromioclavicular joints remaining intact. The study was concluded as negative.",
+                    "answer": "left clavicle injury",
+                    "condition_type": "Accident",
+                    "content": " Physician: Kersey, Cameron\n## Report Text\nLeft clavicle 2 views\nIndication: Status post MVA, left clavicle injury.\nFindings: 2 views left clavicle were obtained showing no",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "S42.002A",
+                    "begin_offset": 11505,
+                    "linked_date": "08/05/2022",
+                    "medical_providers_list": [
+                        "Jack Hughston Memorial Hospital",
+                        "OSHINOWO",
+                        "ABAYOMI",
+                        "Kersey",
+                        "Cameron"
+                    ],
+                    "page_number": 11,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 1101,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 5284,
+                            "output_tokens": 139
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient underwent a left shoulder X-ray following an MVA. The radiographic examination revealed no acute fractures or dislocations, with preserved joint spaces. The conclusion indicated no acute bony abnormality in the left shoulder.",
+                    "answer": "MVA",
+                    "condition_type": "Cause",
+                    "content": " Reporting Physician: Kersey, Cameron\n## Report Text\nLeft shoulder complete\nClinical indication: Status post MVA.\nFindings: 3 views of the left shoulder were obtained",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "V89",
+                    "begin_offset": 12655,
+                    "linked_date": "08/05/2022",
+                    "medical_providers_list": [
+                        "Jack Hughston Memorial Hospital",
+                        "OSHINOWO",
+                        "ABAYOMI",
+                        "Kersey",
+                        "Cameron"
+                    ],
+                    "page_number": 13,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 1044,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 4053,
+                            "output_tokens": 221
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient was involved as a driver injured in collision with unspecified motor vehicles. He presented with pain in left shoulder and left arm, arriving at the hospital ambulatory and semi-urgently following a traffic accident.",
+                    "answer": "Driver injured in collision",
+                    "condition_type": "Cause",
+                    "content": " 08/05/2022 Time: 20:14 Account#: 426513 Bed ER5 Private MD: Diagnosis: Pain in left shoulder; Driver injured in collision with unspecified motor vehicles in traffic accident, initial encounter\nPresentation:",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "V49.9XXA",
+                    "begin_offset": 13462,
+                    "linked_date": "08/05/2022",
+                    "medical_providers_list": [
+                        "Jack Hughston Memorial Hospital",
+                        "OSHINOWO ABAYOMI"
+                    ],
+                    "page_number": 15,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 1060,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 4762,
+                            "output_tokens": 100
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient was involved in a driver injured in collision with unspecified motor vehicles in traffic accident, initial encounter. He presented with pain in left shoulder and clavicular area, arriving ambulatory at the hospital with semi-urgent acuity and appearing uncomfortable.",
+                    "answer": "Driver injured in collision with unspecified motor vehicles in traffic accident, initial encounter",
+                    "condition_type": "Cause",
+                    "content": " 08/05/2022 Time: 20:14 Account#: 426513 Bed ER5 Private MD: Diagnosis: Pain in left shoulder; Driver injured in collision with unspecified motor vehicles in traffic accident, initial encounter\nPresentation: 08/05 20:43 Presenting complaint: Patient states: MVC and now",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "V49.40XA",
+                    "begin_offset": 13462,
+                    "linked_date": "08/05/2022",
+                    "medical_providers_list": [
+                        "Jack Hughston Memorial Hospital",
+                        "OSHINOWO ABAYOMI"
+                    ],
+                    "page_number": 15,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 1275,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 4980,
+                            "output_tokens": 109
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient was involved in an MVC with pain in the left shoulder and clavicular area. Arrived at Jack Hughston Memorial Hospital ambulatory and semi-urgently, appearing uncomfortable but cooperative during initial assessment.",
+                    "answer": "MVC",
+                    "condition_type": "Cause",
+                    "content": " motor vehicles in traffic accident, initial encounter\nPresentation: 08/05 20:43 Presenting complaint: Patient states: MVC and now pain in left pd clavicular area and left",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "V89",
+                    "begin_offset": 13625,
+                    "linked_date": "08/05/2022",
+                    "medical_providers_list": [
+                        "Jack Hughston Memorial Hospital",
+                        "OSHINOWO ABAYOMI"
+                    ],
+                    "page_number": 15,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 1014,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 4680,
+                            "output_tokens": 101
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient has documented pain in left shoulder following an unspecified motor-vehicle accident. The medical encounter occurred on 9/21/2022 at Piedmont Physicians Columbus Stadium Drive Primary Care, with Dennis K Harden, MD providing care for the active shoulder condition.",
+                    "answer": "Pain in left shoulder",
+                    "condition_type": "Accident",
+                    "content": " PHYSICIANS COLUMBUS STADIUM DRIVE PRIMARY CARE (11-11) Encounter form. 37204109 Diagnoses: 1) M25.512 - Pain in left shoulder [Active] 2) V89.2XXD Person injured in unspecified motor-vehicle accident, traffic,",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "M25.512",
+                    "begin_offset": 16063,
+                    "linked_date": "08/14/2022",
+                    "medical_providers_list": [
+                        "Dennis K Harden",
+                        "MEDMONT PHYSICIANS",
+                        "PIEDMONT PHYSICIANS COLUMBUS STADIUM DRIVE PRIMARY CARE"
+                    ],
+                    "page_number": 17,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 2646,
+                            "output_tokens": 17
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 4979,
+                            "output_tokens": 140
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient was involved in a subsequent encounter related to a person injured in unspecified motor-vehicle accident, traffic. The medical visit on 9/21/2022 documented pain in the left shoulder and addressed ongoing treatment following the injury that occurred on 8/14/2022.",
+                    "answer": "Person injured in unspecified motor-vehicle accident, traffic, subsequent encounter",
+                    "condition_type": "Cause",
+                    "content": " Encounter form. 37204109 Diagnoses: 1) M25.512 - Pain in left shoulder [Active] 2) V89.2XXD Person injured in unspecified motor-vehicle accident, traffic, subsequent encounter [Active] Last statement: None\n## Coverages\n## HUMANA MEDICARE -",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "V89.2XXA",
+                    "begin_offset": 16106,
+                    "linked_date": "08/14/2022",
+                    "medical_providers_list": [
+                        "Dennis K Harden",
+                        "MEDMONT PHYSICIANS",
+                        "PIEDMONT PHYSICIANS COLUMBUS STADIUM DRIVE PRIMARY CARE"
+                    ],
+                    "page_number": 17,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 2857,
+                            "output_tokens": 17
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 3930,
+                            "output_tokens": 136
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient experienced pain in left shoulder following an unspecified motor-vehicle accident. The medical visit occurred on 8/24/2022 with Dennis K Harden, MD at Piedmont Physicians, addressing the shoulder pain and accident-related injury.",
+                    "answer": "Pain in left shoulder",
+                    "condition_type": "Accident",
+                    "content": " IANS COLUMBUS STADIUM DRIVE PRIMARY CARE (11-11) Encounter form: 36455641 Diagnoses: 1) M25.512 - Pain in left shoulder [Active] 2) V89.2XXA - Person injured in unspecified motor-vehicle accident,",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "M25",
+                    "begin_offset": 19512,
+                    "linked_date": "08/03/2022",
+                    "medical_providers_list": [
+                        "Dennis K Harden",
+                        "MD"
+                    ],
+                    "page_number": 20,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 1068,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 6266,
+                            "output_tokens": 124
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient was involved in a person injured in unspecified motor-vehicle accident, traffic, initial encounter on 8/3/2022. The medical visit on 8/24/2022 with Dr. Dennis K Harden addressed left shoulder pain related to the accident.",
+                    "answer": "Person injured in unspecified motor-vehicle accident, traffic, initial encounter",
+                    "condition_type": "Cause",
+                    "content": " form: 36455641 Diagnoses: 1) M25.512 - Pain in left shoulder [Active] 2) V89.2XXA - Person injured in unspecified motor-vehicle accident, traffic, initial encounter [Active] Last statement: None\n## Coverages\n## HUMANA MEDICARE -",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "V89.2XXA",
+                    "begin_offset": 19557,
+                    "linked_date": "08/03/2022",
+                    "medical_providers_list": [
+                        "Dennis K Harden",
+                        "MD"
+                    ],
+                    "page_number": 20,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 2938,
+                            "output_tokens": 17
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 4170,
+                            "output_tokens": 119
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient was involved in a motor vehicle accident on August 5, where another vehicle crossed the centerline and struck his car. He was transported by ambulance to Memorial, underwent x-rays showing no acute fractures, and is now experiencing left shoulder pain during follow-up.",
+                    "answer": "motor vehicle accident",
+                    "condition_type": "Cause",
+                    "content": " with\nShoulder Pain\nHPI\nIs a 26-year-old white male here in follow-up from a motor vehicle accident on August 5. Apparently someone crosses centerline and struck his",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "V89.2XXA",
+                    "begin_offset": 25356,
+                    "linked_date": "08/10/2022",
+                    "medical_providers_list": [
+                        "Dennis K Harden",
+                        "Piedmont Physicians at Stadium Drive"
+                    ],
+                    "page_number": 24,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 948,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 6068,
+                            "output_tokens": 132
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient has a history of Brain tumor and underwent multiple brain surgeries. He experiences multiple medical conditions including hypertension, major depressive disorder, obesity, and obstructive sleep apnea. He is single and has previously had an appendectomy and wisdom tooth extraction.",
+                    "answer": "Brain tumor",
+                    "condition_type": "Pre-existing Condition",
+                    "content": " Dennis K Harden, MD at 8/10/2022 10:00 AM (continued)\nPast Medical History:\nDiagnosis Date\nBrain tumor (HC)\nHypertension\nMDD (major depressive disorder), recurrent episode, moderate (HC)",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "D49",
+                    "begin_offset": 27359,
+                    "linked_date": "08/10/2022",
+                    "medical_providers_list": [
+                        "Dennis K Harden",
+                        "MD",
+                        "ChartPro Incorporated"
+                    ],
+                    "page_number": 25,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 1011,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 5597,
+                            "output_tokens": 130
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient has a history of brain tumor and major depressive disorder (HC). He underwent multiple brain surgeries and an appendectomy. Currently single, the patient manages multiple health conditions including hypertension, obstructive sleep apnea, and testicular hypofunction.",
+                    "answer": "HC",
+                    "condition_type": "Pre-existing Condition",
+                    "content": " Harden, MD at 8/10/2022 10:00 AM (continued)\nPast Medical History:\nDiagnosis Date\nBrain tumor (HC)\nHypertension\nMDD (major depressive disorder), recurrent episode, moderate (HC)",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "I60",
+                    "begin_offset": 27372,
+                    "linked_date": "08/10/2022",
+                    "medical_providers_list": [
+                        "Dennis K Harden",
+                        "MD",
+                        "ChartPro Incorporated"
+                    ],
+                    "page_number": 25,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 983,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 5543,
+                            "output_tokens": 130
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient has a medical history including Hypertension, major depressive disorder, obesity, obstructive sleep apnea, and a brain tumor. He has undergone multiple brain surgeries, an appendectomy, and wisdom tooth extraction.",
+                    "answer": "Hypertension",
+                    "condition_type": "Pre-existing Condition",
+                    "content": " MD at 8/10/2022 10:00 AM (continued)\nPast Medical History:\nDiagnosis Date\nBrain tumor (HC)\nHypertension\nMDD (major depressive disorder), recurrent episode, moderate (HC)\nObesity due",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "I10",
+                    "begin_offset": 27376,
+                    "linked_date": "08/10/2022",
+                    "medical_providers_list": [
+                        "Dennis K Harden",
+                        "MD",
+                        "ChartPro Incorporated"
+                    ],
+                    "page_number": 25,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 1031,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 5579,
+                            "output_tokens": 118
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient has a history of MDD (major depressive disorder) with recurrent moderate episodes, alongside multiple medical conditions including brain tumor, hypertension, obesity, and obstructive sleep apnea. He has undergone multiple brain surgeries and other procedures.",
+                    "answer": "MDD",
+                    "condition_type": "Pre-existing Condition",
+                    "content": " at 8/10/2022 10:00 AM (continued)\nPast Medical History:\nDiagnosis Date\nBrain tumor (HC)\nHypertension\nMDD (major depressive disorder), recurrent episode, moderate (HC)\nObesity due to",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "F32",
+                    "begin_offset": 27389,
+                    "linked_date": "08/10/2022",
+                    "medical_providers_list": [
+                        "Dennis K Harden",
+                        "MD",
+                        "ChartPro Incorporated"
+                    ],
+                    "page_number": 25,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 999,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 5555,
+                            "output_tokens": 128
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient has a history of major depressive disorder with recurrent moderate episodes. Medical history includes brain tumor, hypertension, obesity, obstructive sleep apnea, and multiple brain surgeries. Currently prescribed medication with specific dosing instructions for 10 days.",
+                    "answer": "major depressive disorder",
+                    "condition_type": "Pre-existing Condition",
+                    "content": " 8/10/2022 10:00 AM (continued)\nPast Medical History:\nDiagnosis Date\nBrain tumor (HC)\nHypertension\nMDD (major depressive disorder), recurrent episode, moderate (HC)\nObesity due to excess calories",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "F33.1",
+                    "begin_offset": 27394,
+                    "linked_date": "08/10/2022",
+                    "medical_providers_list": [
+                        "Dennis K Harden",
+                        "MD",
+                        "ChartPro Incorporated"
+                    ],
+                    "page_number": 25,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 1032,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 5582,
+                            "output_tokens": 129
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient has a medical history including obesity due to excess calories, along with other conditions such as brain tumor, hypertension, major depressive disorder, obstructive sleep apnea, and testicular hypofunction. Past surgical history includes multiple brain surgeries, appendectomy, and wisdom tooth extraction.",
+                    "answer": "Obesity",
+                    "condition_type": "Pre-existing Condition",
+                    "content": "\nDiagnosis Date\nBrain tumor (HC)\nHypertension\nMDD (major depressive disorder), recurrent episode, moderate (HC)\nObesity due to excess calories\nObstructive sleep apnea\nPresence of cerebrospinal",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "E66",
+                    "begin_offset": 27455,
+                    "linked_date": "08/10/2022",
+                    "medical_providers_list": [
+                        "Dennis K Harden",
+                        "MD",
+                        "ChartPro Incorporated"
+                    ],
+                    "page_number": 25,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 996,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 5539,
+                            "output_tokens": 137
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient has a medical history including obesity due to excess calories, brain tumor, hypertension, major depressive disorder, obstructive sleep apnea, and testicular hypofunction. Past surgical procedures include multiple brain surgeries, appendectomy, and wisdom tooth extraction.",
+                    "answer": "excess calories",
+                    "condition_type": "Pre-existing Condition",
+                    "content": " tumor (HC)\nHypertension\nMDD (major depressive disorder), recurrent episode, moderate (HC)\nObesity due to excess calories\nObstructive sleep apnea\nPresence of cerebrospinal fluid drainage device\nTesticular",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "E66",
+                    "begin_offset": 27470,
+                    "linked_date": "08/10/2022",
+                    "medical_providers_list": [
+                        "Dennis K Harden",
+                        "MD",
+                        "ChartPro Incorporated"
+                    ],
+                    "page_number": 25,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 999,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 5551,
+                            "output_tokens": 131
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient has a medical history including obstructive sleep apnea, brain tumor, hypertension, major depressive disorder, and obesity. He has undergone multiple brain surgeries, an appendectomy, and wisdom tooth extraction, and is currently single.",
+                    "answer": "Obstructive sleep apnea",
+                    "condition_type": "Pre-existing Condition",
+                    "content": "\nHypertension\nMDD (major depressive disorder), recurrent episode, moderate (HC)\nObesity due to excess calories\nObstructive sleep apnea\nPresence of cerebrospinal fluid drainage device\nTesticular hypofunction\nPast Surgical",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "G47.33",
+                    "begin_offset": 27486,
+                    "linked_date": "08/10/2022",
+                    "medical_providers_list": [
+                        "Dennis K Harden",
+                        "MD",
+                        "ChartPro Incorporated"
+                    ],
+                    "page_number": 25,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 1096,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 5631,
+                            "output_tokens": 127
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Dennis K Harden has a medical history involving a brain tumor, multiple brain surgeries, and a cerebrospinal fluid drainage device. He has been diagnosed with hypertension, major depressive disorder, obesity, obstructive sleep apnea, and testicular hypofunction.",
+                    "answer": "cerebrospinal fluid drainage device",
+                    "condition_type": "Pre-existing Condition",
+                    "content": " recurrent episode, moderate (HC)\nObesity due to excess calories\nObstructive sleep apnea\nPresence of cerebrospinal fluid drainage device\nTesticular hypofunction\nPast Surgical History:\nProcedure\nAPPENDECTOMY\nBRAIN SURGERY x4",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "Z98.2",
+                    "begin_offset": 27522,
+                    "linked_date": "08/10/2022",
+                    "medical_providers_list": [
+                        "Dennis K Harden",
+                        "MD",
+                        "ChartPro Incorporated"
+                    ],
+                    "patient": {
+                        "patient_list": [
+                            "Dennis K Harden"
+                        ],
+                        "type": "others"
+                    },
+                    "page_number": 25,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 1081,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 5641,
+                            "output_tokens": 140
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Dennis K Harden has a medical history including Testicular hypofunction, brain tumor, hypertension, major depressive disorder, obesity, and obstructive sleep apnea. He has undergone multiple brain surgeries, an appendectomy, and wisdom tooth extraction.",
+                    "answer": "Testicular hypofunction",
+                    "condition_type": "Pre-existing Condition",
+                    "content": "\nObesity due to excess calories\nObstructive sleep apnea\nPresence of cerebrospinal fluid drainage device\nTesticular hypofunction\nPast Surgical History:\nProcedure\nAPPENDECTOMY\nBRAIN SURGERY x4\nWISDOM TOOTH",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "E29",
+                    "begin_offset": 27558,
+                    "linked_date": "08/10/2022",
+                    "medical_providers_list": [
+                        "Dennis K Harden",
+                        "MD",
+                        "ChartPro Incorporated"
+                    ],
+                    "patient": {
+                        "patient_list": [
+                            "Dennis K Harden"
+                        ],
+                        "type": "others"
+                    },
+                    "page_number": 25,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 1064,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 5619,
+                            "output_tokens": 139
+                        }
+                    }
+                },
+                {
+                    "generated_content": null,
+                    "answer": "Heart attack",
+                    "condition_type": null,
+                    "content": " 8/10/2022 10:00 AM (continued)\n## Family History\nProblem | Relation | Age of Onset\nHeart attack | Mother | \nDiabetes | Mother | \nHypertension",
+                    "is_true": false,
+                    "classified_as": "Family History",
+                    "icd10cm_concept_code": "Z82",
+                    "begin_offset": 28763,
+                    "linked_date": "08/10/2022",
+                    "medical_providers_list": null,
+                    "page_number": 26,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 963,
+                            "output_tokens": 7
+                        }
+                    }
+                },
+                {
+                    "generated_content": null,
+                    "answer": "Diabetes",
+                    "condition_type": null,
+                    "content": " History\nProblem | Relation | Age of Onset\nHeart attack | Mother | \nDiabetes | Mother | \nHypertension | Mother | \nHeart",
+                    "is_true": false,
+                    "classified_as": "Family History",
+                    "icd10cm_concept_code": "Z83",
+                    "begin_offset": 28788,
+                    "linked_date": "08/10/2022",
+                    "medical_providers_list": null,
+                    "page_number": 26,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 960,
+                            "output_tokens": 7
+                        }
+                    }
+                },
+                {
+                    "generated_content": null,
+                    "answer": "Hypertension",
+                    "condition_type": null,
+                    "content": " Age of Onset\nHeart attack | Mother | \nDiabetes | Mother | \nHypertension | Mother | \nHeart attack | Father | ",
+                    "is_true": false,
+                    "classified_as": "Family History",
+                    "icd10cm_concept_code": "Z82",
+                    "begin_offset": 28809,
+                    "linked_date": "08/10/2022",
+                    "medical_providers_list": null,
+                    "page_number": 26,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 991,
+                            "output_tokens": 7
+                        }
+                    }
+                },
+                {
+                    "generated_content": null,
+                    "answer": "Heart attack",
+                    "condition_type": null,
+                    "content": " | Mother | \nDiabetes | Mother | \nHypertension | Mother | \nHeart attack | Father | \nHypertension | Father | \nStroke",
+                    "is_true": false,
+                    "classified_as": "Family History",
+                    "icd10cm_concept_code": "Z82",
+                    "begin_offset": 28834,
+                    "linked_date": "08/10/2022",
+                    "medical_providers_list": null,
+                    "page_number": 26,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 962,
+                            "output_tokens": 7
+                        }
+                    }
+                },
+                {
+                    "generated_content": null,
+                    "answer": "Hypertension",
+                    "condition_type": null,
+                    "content": " Mother | \nHypertension | Mother | \nHeart attack | Father | \nHypertension | Father | \nStroke | Other | \nCancer",
+                    "is_true": false,
+                    "classified_as": "Family History",
+                    "icd10cm_concept_code": "Z82",
+                    "begin_offset": 28859,
+                    "linked_date": "08/10/2022",
+                    "medical_providers_list": null,
+                    "page_number": 26,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 992,
+                            "output_tokens": 7
+                        }
+                    }
+                },
+                {
+                    "generated_content": null,
+                    "answer": "Stroke",
+                    "condition_type": null,
+                    "content": " Mother | \nHeart attack | Father | \nHypertension | Father | \nStroke | Other | \nCancer | Other |\n## Immunization",
+                    "is_true": false,
+                    "classified_as": "Family History",
+                    "icd10cm_concept_code": "Z82.3",
+                    "begin_offset": 28884,
+                    "linked_date": "08/10/2022",
+                    "medical_providers_list": null,
+                    "page_number": 26,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 965,
+                            "output_tokens": 7
+                        }
+                    }
+                },
+                {
+                    "generated_content": null,
+                    "answer": "Cancer",
+                    "condition_type": null,
+                    "content": " | Father | \nHypertension | Father | \nStroke | Other | \nCancer | Other |\n## Immunization History\nAdministered | Date(s) Administered",
+                    "is_true": false,
+                    "classified_as": "Family History",
+                    "icd10cm_concept_code": "Z80",
+                    "begin_offset": 28902,
+                    "linked_date": "08/10/2022",
+                    "medical_providers_list": null,
+                    "page_number": 26,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 950,
+                            "output_tokens": 7
+                        }
+                    }
+                },
+                {
+                    "generated_content": null,
+                    "answer": "Influenza",
+                    "condition_type": null,
+                    "content": " | \nCancer | Other |\n## Immunization History\nAdministered | Date(s) Administered | Influenza High Dose 0.5ml (CVX=135) | 09/18/2013\n## Review of Systems",
+                    "is_true": false,
+                    "classified_as": "Family History",
+                    "icd10cm_concept_code": "J11",
+                    "begin_offset": 28981,
+                    "linked_date": "08/10/2022",
+                    "medical_providers_list": null,
+                    "page_number": 26,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 995,
+                            "output_tokens": 7
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient was involved in a motor vehicle accident as a restrained driver, resulting in acute left shoulder pain. Treatment includes tiZANidine medication, prescribed three times daily for 10 days to manage pain and support recovery.",
+                    "answer": "Motor vehicle accident",
+                    "condition_type": "Cause",
+                    "content": " Dispense: 30 tablet Refill: 0\n## Assessment:\n1. Acute pain of left shoulder\n2. Motor vehicle accident injuring restrained driver, initial encounter\n## Plan:\nOrders Placed This",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "V89.2XXA",
+                    "begin_offset": 30739,
+                    "linked_date": "08/10/2022",
+                    "medical_providers_list": [
+                        "Dennis K Harden",
+                        "MD",
+                        "Piedmont Physicians at Stadium Drive"
+                    ],
+                    "page_number": 27,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 997,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 4752,
+                            "output_tokens": 117
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient experienced a motor vehicle accident injuring a restrained driver during an initial encounter. The patient was diagnosed with acute left shoulder pain and prescribed tiZANidine medication for pain management, with instructions to take three 4 mg tablets daily over 10 days.",
+                    "answer": "Motor vehicle accident injuring restrained driver, initial encounter",
+                    "condition_type": "Cause",
+                    "content": " Dispense: 30 tablet Refill: 0\n## Assessment:\n1. Acute pain of left shoulder\n2. Motor vehicle accident injuring restrained driver, initial encounter\n## Plan:\nOrders Placed This Encounter\ntiZANidine (ZANAFLEX) 4 MG",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "V49.9XXA",
+                    "begin_offset": 30739,
+                    "linked_date": "08/10/2022",
+                    "medical_providers_list": [
+                        "Dennis K Harden",
+                        "MD",
+                        "Piedmont Physicians at Stadium Drive"
+                    ],
+                    "page_number": 27,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 1140,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 4910,
+                            "output_tokens": 126
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient was involved in a motor vehicle accident approximately 3 weeks ago, resulting in left shoulder pain. He presented to the emergency room without a fracture and later to the office with severe shoulder pain, decreased range of motion, and sleep difficulties.",
+                    "answer": "motor vehicle accident",
+                    "condition_type": "Cause",
+                    "content": " Office Visit 2 week\nHPI\nIs a 36-year-old gentleman who was involved in a motor vehicle accident approximately 3 weeks ago. Restrained no airbag deployment resultant left",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "V89.2XXA",
+                    "begin_offset": 35405,
+                    "linked_date": "08/24/2022",
+                    "medical_providers_list": [
+                        "Dennis K Harden",
+                        "MD",
+                        "Piedmont Physicians at Stadium Drive"
+                    ],
+                    "page_number": 30,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 941,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 5598,
+                            "output_tokens": 120
+                        }
+                    }
+                },
+                {
+                    "generated_content": null,
+                    "answer": "fracture",
+                    "condition_type": null,
+                    "content": " resultant left shoulder pain presented to the emergency room not found to have a fracture. Presented to my office a few days later with",
+                    "is_true": false,
+                    "classified_as": "Person is Not Suffering",
+                    "icd10cm_concept_code": "S42.92XA",
+                    "begin_offset": 35568,
+                    "linked_date": "08/24/2022",
+                    "medical_providers_list": null,
+                    "page_number": 30,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 901,
+                            "output_tokens": 10
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient has a history of Brain tumor and underwent multiple brain surgeries. He experiences various medical conditions including hypertension, major depressive disorder, obesity, and obstructive sleep apnea, with a presence of cerebrospinal fluid drainage device.",
+                    "answer": "Brain tumor",
+                    "condition_type": "Pre-existing Condition",
+                    "content": " Dennis K Harden, MD at 8/24/2022 9:00 AM (continued)\nPast Medical History:\nDiagnosis Date\nBrain tumor (HC)\nHypertension\nMDD (major depressive disorder), recurrent episode, moderate (HC)",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "D49",
+                    "begin_offset": 37116,
+                    "linked_date": "08/24/2022",
+                    "medical_providers_list": [
+                        "Dennis K Harden",
+                        "MD",
+                        "ChartPro Incorporated"
+                    ],
+                    "page_number": 31,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 1021,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 5625,
+                            "output_tokens": 126
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient has a medical history including Hypertension, major depressive disorder, obesity, obstructive sleep apnea, and a brain tumor. He has undergone multiple brain surgeries, an appendectomy, and wisdom tooth extraction.",
+                    "answer": "Hypertension",
+                    "condition_type": "Pre-existing Condition",
+                    "content": " MD at 8/24/2022 9:00 AM (continued)\nPast Medical History:\nDiagnosis Date\nBrain tumor (HC)\nHypertension\nMDD (major depressive disorder), recurrent episode, moderate (HC)\nObesity due",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "I10",
+                    "begin_offset": 37133,
+                    "linked_date": "08/24/2022",
+                    "medical_providers_list": [
+                        "Dennis K Harden",
+                        "MD",
+                        "ChartPro Incorporated"
+                    ],
+                    "page_number": 31,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 1050,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 5636,
+                            "output_tokens": 124
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient has a history of MDD (major depressive disorder) with recurrent moderate episodes, alongside multiple medical conditions including brain tumor, hypertension, obesity, obstructive sleep apnea, and testicular hypofunction. He has undergone four brain surgeries and other procedures.",
+                    "answer": "MDD",
+                    "condition_type": "Pre-existing Condition",
+                    "content": " at 8/24/2022 9:00 AM (continued)\nPast Medical History:\nDiagnosis Date\nBrain tumor (HC)\nHypertension\nMDD (major depressive disorder), recurrent episode, moderate (HC)\nObesity due to",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "F32",
+                    "begin_offset": 37146,
+                    "linked_date": "08/24/2022",
+                    "medical_providers_list": [
+                        "Dennis K Harden",
+                        "MD",
+                        "ChartPro Incorporated"
+                    ],
+                    "page_number": 31,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 1017,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 5609,
+                            "output_tokens": 134
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient has a history of major depressive disorder with recurrent moderate episodes. He has undergone multiple brain surgeries and experiences various medical conditions including hypertension, obesity, and obstructive sleep apnea.",
+                    "answer": "major depressive disorder",
+                    "condition_type": "Pre-existing Condition",
+                    "content": " 8/24/2022 9:00 AM (continued)\nPast Medical History:\nDiagnosis Date\nBrain tumor (HC)\nHypertension\nMDD (major depressive disorder), recurrent episode, moderate (HC)\nObesity due to excess calories",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "F33.1",
+                    "begin_offset": 37151,
+                    "linked_date": "08/24/2022",
+                    "medical_providers_list": [
+                        "Dennis K Harden",
+                        "MD",
+                        "ChartPro Incorporated"
+                    ],
+                    "page_number": 31,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 1051,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 5639,
+                            "output_tokens": 118
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient has a medical history including Obesity due to excess calories, along with hypertension, major depressive disorder, obstructive sleep apnea, and a history of brain surgeries. Multiple past surgical procedures include appendectomy and brain surgery.",
+                    "answer": "Obesity",
+                    "condition_type": "Pre-existing Condition",
+                    "content": "\nDiagnosis Date\nBrain tumor (HC)\nHypertension\nMDD (major depressive disorder), recurrent episode, moderate (HC)\nObesity due to excess calories\nObstructive sleep apnea\nPresence of cerebrospinal",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "E66",
+                    "begin_offset": 37212,
+                    "linked_date": "08/24/2022",
+                    "medical_providers_list": [
+                        "Dennis K Harden",
+                        "MD",
+                        "ChartPro Incorporated"
+                    ],
+                    "page_number": 31,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 1015,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 5596,
+                            "output_tokens": 126
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient has a medical history including obesity due to excess calories, brain tumor, hypertension, major depressive disorder, obstructive sleep apnea, and testicular hypofunction. Past surgical procedures include brain surgery, appendectomy, and wisdom tooth extraction.",
+                    "answer": "excess calories",
+                    "condition_type": "Pre-existing Condition",
+                    "content": " tumor (HC)\nHypertension\nMDD (major depressive disorder), recurrent episode, moderate (HC)\nObesity due to excess calories\nObstructive sleep apnea\nPresence of cerebrospinal fluid drainage device\nTesticular",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "E66",
+                    "begin_offset": 37227,
+                    "linked_date": "08/24/2022",
+                    "medical_providers_list": [
+                        "Dennis K Harden",
+                        "MD",
+                        "ChartPro Incorporated"
+                    ],
+                    "page_number": 31,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 1013,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 5593,
+                            "output_tokens": 129
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient has a medical history including obstructive sleep apnea, brain tumor, hypertension, major depressive disorder, and obesity. He has undergone multiple brain surgeries, an appendectomy, and wisdom tooth extraction, and is currently single.",
+                    "answer": "Obstructive sleep apnea",
+                    "condition_type": "Pre-existing Condition",
+                    "content": "\nHypertension\nMDD (major depressive disorder), recurrent episode, moderate (HC)\nObesity due to excess calories\nObstructive sleep apnea\nPresence of cerebrospinal fluid drainage device\nTesticular hypofunction\nPast Surgical",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "G47.33",
+                    "begin_offset": 37243,
+                    "linked_date": "08/24/2022",
+                    "medical_providers_list": [
+                        "Dennis K Harden",
+                        "MD",
+                        "ChartPro Incorporated"
+                    ],
+                    "page_number": 31,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 1109,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 5670,
+                            "output_tokens": 127
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Dennis K Harden has a medical history including a brain tumor, multiple brain surgeries, and a cerebrospinal fluid drainage device. He experiences hypertension, major depressive disorder, obesity, obstructive sleep apnea, and testicular hypofunction.",
+                    "answer": "cerebrospinal fluid drainage device",
+                    "condition_type": "Pre-existing Condition",
+                    "content": " recurrent episode, moderate (HC)\nObesity due to excess calories\nObstructive sleep apnea\nPresence of cerebrospinal fluid drainage device\nTesticular hypofunction\nPast Surgical History:\nProcedure\nAPPENDECTOMY\nBRAIN SURGERY x4",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "Z98.2",
+                    "begin_offset": 37279,
+                    "linked_date": "08/24/2022",
+                    "medical_providers_list": [
+                        "Dennis K Harden",
+                        "MD",
+                        "ChartPro Incorporated"
+                    ],
+                    "patient": {
+                        "patient_list": [
+                            "Dennis K Harden"
+                        ],
+                        "type": "others"
+                    },
+                    "page_number": 31,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 1083,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 5647,
+                            "output_tokens": 137
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Dennis K Harden has a medical history including Testicular hypofunction, brain tumor, hypertension, major depressive disorder, obesity, and obstructive sleep apnea. He has undergone multiple brain surgeries, an appendectomy, and wisdom tooth extraction, and is currently single.",
+                    "answer": "Testicular hypofunction",
+                    "condition_type": "Pre-existing Condition",
+                    "content": "\nObesity due to excess calories\nObstructive sleep apnea\nPresence of cerebrospinal fluid drainage device\nTesticular hypofunction\nPast Surgical History:\nProcedure\nAPPENDECTOMY\nBRAIN SURGERY x4\nWISDOM TOOTH",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "E29",
+                    "begin_offset": 37315,
+                    "linked_date": "08/24/2022",
+                    "medical_providers_list": [
+                        "Dennis K Harden",
+                        "MD",
+                        "ChartPro Incorporated"
+                    ],
+                    "patient": {
+                        "patient_list": [
+                            "Dennis K Harden"
+                        ],
+                        "type": "others"
+                    },
+                    "page_number": 31,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 1063,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 5616,
+                            "output_tokens": 144
+                        }
+                    }
+                },
+                {
+                    "generated_content": null,
+                    "answer": "Heart attack",
+                    "condition_type": null,
+                    "content": " 8/24/2022 9:00 AM (continued)\n## Family History\nProblem | Relation | Age of Onset\nHeart attack | Mother | \nDiabetes | Mother | \nHypertension",
+                    "is_true": false,
+                    "classified_as": "Family History",
+                    "icd10cm_concept_code": "Z82",
+                    "begin_offset": 38519,
+                    "linked_date": "08/24/2022",
+                    "medical_providers_list": null,
+                    "page_number": 32,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 943,
+                            "output_tokens": 7
+                        }
+                    }
+                },
+                {
+                    "generated_content": null,
+                    "answer": "Diabetes",
+                    "condition_type": null,
+                    "content": " History\nProblem | Relation | Age of Onset\nHeart attack | Mother | \nDiabetes | Mother | \nHypertension | Mother | \nHeart",
+                    "is_true": false,
+                    "classified_as": "Family History",
+                    "icd10cm_concept_code": "Z83",
+                    "begin_offset": 38544,
+                    "linked_date": "08/24/2022",
+                    "medical_providers_list": null,
+                    "page_number": 32,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 944,
+                            "output_tokens": 7
+                        }
+                    }
+                },
+                {
+                    "generated_content": null,
+                    "answer": "Hypertension",
+                    "condition_type": null,
+                    "content": " Age of Onset\nHeart attack | Mother | \nDiabetes | Mother | \nHypertension | Mother | \nHeart attack | Father | ",
+                    "is_true": false,
+                    "classified_as": "Family History",
+                    "icd10cm_concept_code": "Z82",
+                    "begin_offset": 38565,
+                    "linked_date": "08/24/2022",
+                    "medical_providers_list": null,
+                    "page_number": 32,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 978,
+                            "output_tokens": 7
+                        }
+                    }
+                },
+                {
+                    "generated_content": null,
+                    "answer": "Heart attack",
+                    "condition_type": null,
+                    "content": " | Mother | \nDiabetes | Mother | \nHypertension | Mother | \nHeart attack | Father | \nHypertension | Father | \nStroke",
+                    "is_true": false,
+                    "classified_as": "Family History",
+                    "icd10cm_concept_code": "Z82",
+                    "begin_offset": 38590,
+                    "linked_date": "08/24/2022",
+                    "medical_providers_list": null,
+                    "page_number": 32,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 949,
+                            "output_tokens": 7
+                        }
+                    }
+                },
+                {
+                    "generated_content": null,
+                    "answer": "Hypertension",
+                    "condition_type": null,
+                    "content": " Mother | \nHypertension | Mother | \nHeart attack | Father | \nHypertension | Father | \nStroke | Other | \nCancer",
+                    "is_true": false,
+                    "classified_as": "Family History",
+                    "icd10cm_concept_code": "Z82",
+                    "begin_offset": 38615,
+                    "linked_date": "08/24/2022",
+                    "medical_providers_list": null,
+                    "page_number": 32,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 984,
+                            "output_tokens": 7
+                        }
+                    }
+                },
+                {
+                    "generated_content": null,
+                    "answer": "Stroke",
+                    "condition_type": null,
+                    "content": " Mother | \nHeart attack | Father | \nHypertension | Father | \nStroke | Other | \nCancer | Other |\n## Review",
+                    "is_true": false,
+                    "classified_as": "Family History",
+                    "icd10cm_concept_code": "Z82.3",
+                    "begin_offset": 38640,
+                    "linked_date": "08/24/2022",
+                    "medical_providers_list": null,
+                    "page_number": 32,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 956,
+                            "output_tokens": 7
+                        }
+                    }
+                },
+                {
+                    "generated_content": null,
+                    "answer": "Cancer",
+                    "condition_type": null,
+                    "content": " | Father | \nHypertension | Father | \nStroke | Other | \nCancer | Other |\n## Review of Systems\nReview of Systems",
+                    "is_true": false,
+                    "classified_as": "Family History",
+                    "icd10cm_concept_code": "Z80",
+                    "begin_offset": 38658,
+                    "linked_date": "08/24/2022",
+                    "medical_providers_list": null,
+                    "page_number": 32,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 950,
+                            "output_tokens": 7
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient was involved in a motor vehicle accident injuring a restrained driver, initial encounter. He experienced acute left shoulder pain and received a referral for routine physical therapy evaluation and treatment, with a follow-up planned after approximately 4 weeks of therapy.",
+                    "answer": "Motor vehicle accident injuring restrained driver, initial encounter",
+                    "condition_type": "Cause",
+                    "content": " Number of Visits Requested: 1\n## Assessment:\n1. Acute pain of left shoulder\n2. Motor vehicle accident injuring restrained driver, initial encounter\n## Plan:\nOrders Placed This Encounter\nAmb referral to Physical",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "V49.9XXA",
+                    "begin_offset": 40267,
+                    "linked_date": "08/24/2022",
+                    "medical_providers_list": [
+                        "Dennis K. Harden",
+                        "MD",
+                        "Piedmont Physicians at Stadium Drive"
+                    ],
+                    "page_number": 33,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 2738,
+                            "output_tokens": 17
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 3827,
+                            "output_tokens": 120
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient was involved in a motor vehicle accident approximately 3 weeks prior, resulting in left shoulder pain. He presented to the emergency room without a fracture and later visited the office with severe shoulder pain, decreased range of motion, and sleep difficulties.",
+                    "answer": "motor vehicle accident",
+                    "condition_type": "Cause",
+                    "content": " Office Visit Month\nHPI\n8/24 Is a 36-year-old gentleman who was involved in a motor vehicle accident approximately 3 weeks age Restrained no airbag deployment resultant left",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "V89.2XXA",
+                    "begin_offset": 44542,
+                    "linked_date": "09/21/2022",
+                    "medical_providers_list": [
+                        "Piedmont Physicians"
+                    ],
+                    "page_number": 36,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 974,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 4900,
+                            "output_tokens": 101
+                        }
+                    }
+                },
+                {
+                    "generated_content": null,
+                    "answer": "fracture",
+                    "condition_type": null,
+                    "content": " resultant left shoulder pain presented to the emergency room not found to have a fracture. Presented to my office a few days later with",
+                    "is_true": false,
+                    "classified_as": "Person is Not Suffering",
+                    "icd10cm_concept_code": "S42.92XA",
+                    "begin_offset": 44704,
+                    "linked_date": "09/21/2022",
+                    "medical_providers_list": null,
+                    "page_number": 36,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 909,
+                            "output_tokens": 10
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient has a documented history of a Brain tumor, with multiple brain surgeries performed. He also manages several health conditions including hypertension, major depressive disorder, obesity, and obstructive sleep apnea, with ongoing medical treatment and medication management.",
+                    "answer": "Brain tumor",
+                    "condition_type": "Pre-existing Condition",
+                    "content": " daily with meals. Disp: 60 tablet. Rfl: 1\n## Past Medical History:\nDiagnosis Date\nBrain tumor (HC)\nHypertension\nMDD (major depressive disorder), recurrent episode, moderate (HC)",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "D49",
+                    "begin_offset": 46591,
+                    "linked_date": "09/21/2022",
+                    "medical_providers_list": [
+                        "Donnie K. Hardon",
+                        "MD",
+                        "Piedmont MEALTHCARE",
+                        "ChartPro Incorporated"
+                    ],
+                    "page_number": 37,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 1013,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 6217,
+                            "output_tokens": 131
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient has been diagnosed with Hypertension, along with other medical conditions including major depressive disorder, obesity, obstructive sleep apnea, and testicular hypofunction. He has undergone multiple surgical procedures, including brain surgery, and is currently taking medications to manage his health conditions.",
+                    "answer": "Hypertension",
+                    "condition_type": "Pre-existing Condition",
+                    "content": " Disp: 60 tablet. Rfl: 1\n## Past Medical History:\nDiagnosis Date\nBrain tumor (HC)\nHypertension\nMDD (major depressive disorder), recurrent episode, moderate (HC)\nObesity due",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "I10",
+                    "begin_offset": 46608,
+                    "linked_date": "09/21/2022",
+                    "medical_providers_list": [
+                        "Donnie K. Hardon",
+                        "MD",
+                        "Piedmont MEALTHCARE",
+                        "ChartPro Incorporated"
+                    ],
+                    "page_number": 37,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 1044,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 6236,
+                            "output_tokens": 140
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient has a history of MDD, recurrent moderate episode, alongside multiple medical conditions including brain tumor, hypertension, obesity, obstructive sleep apnea, and testicular hypofunction. He has undergone multiple surgical procedures, including brain surgery, and is currently single.",
+                    "answer": "MDD",
+                    "condition_type": "Pre-existing Condition",
+                    "content": " 60 tablet. Rfl: 1\n## Past Medical History:\nDiagnosis Date\nBrain tumor (HC)\nHypertension\nMDD (major depressive disorder), recurrent episode, moderate (HC)\nObesity due to",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "F33",
+                    "begin_offset": 46621,
+                    "linked_date": "11/22/2022",
+                    "medical_providers_list": [
+                        "Donnie K. Hardon",
+                        "MD",
+                        "Piedmont MEALTHCARE",
+                        "ChartPro Incorporated"
+                    ],
+                    "page_number": 37,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 1007,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 6191,
+                            "output_tokens": 144
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient has a history of major depressive disorder with recurrent moderate episodes. He has undergone multiple brain surgeries and experiences several health conditions including hypertension, obesity, obstructive sleep apnea, and testicular hypofunction.",
+                    "answer": "major depressive disorder",
+                    "condition_type": "Pre-existing Condition",
+                    "content": " tablet. Rfl: 1\n## Past Medical History:\nDiagnosis Date\nBrain tumor (HC)\nHypertension\nMDD (major depressive disorder), recurrent episode, moderate (HC)\nObesity due to excess calories",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "F33.1",
+                    "begin_offset": 46626,
+                    "linked_date": "09/21/2022",
+                    "medical_providers_list": [
+                        "Donnie K. Hardon",
+                        "MD",
+                        "Piedmont MEALTHCARE",
+                        "ChartPro Incorporated"
+                    ],
+                    "page_number": 37,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 1038,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 6210,
+                            "output_tokens": 135
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient has a medical history including Obesity due to excess calories, along with hypertension, major depressive disorder, obstructive sleep apnea, and testicular hypofunction. He has undergone multiple brain surgeries, an appendectomy, and wisdom tooth extraction.",
+                    "answer": "Obesity",
+                    "condition_type": "Pre-existing Condition",
+                    "content": "\nDiagnosis Date\nBrain tumor (HC)\nHypertension\nMDD (major depressive disorder), recurrent episode, moderate (HC)\nObesity due to excess calories\nObstructive sleep apnea\nof fluid\nTesticular",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "E66",
+                    "begin_offset": 46687,
+                    "linked_date": "09/21/2022",
+                    "medical_providers_list": [
+                        "Donnie K. Hardon",
+                        "MD",
+                        "Piedmont MEALTHCARE",
+                        "ChartPro Incorporated"
+                    ],
+                    "page_number": 37,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 1000,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 6171,
+                            "output_tokens": 137
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient has a medical history including obesity due to excess calories, brain tumor, hypertension, major depressive disorder, obstructive sleep apnea, and testicular hypofunction. Past surgical procedures include brain surgery, appendectomy, and wisdom tooth extraction.",
+                    "answer": "excess calories",
+                    "condition_type": "Pre-existing Condition",
+                    "content": " tumor (HC)\nHypertension\nMDD (major depressive disorder), recurrent episode, moderate (HC)\nObesity due to excess calories\nObstructive sleep apnea\nof fluid\nTesticular hypofunction\nPast Surgical History:",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "E66",
+                    "begin_offset": 46702,
+                    "linked_date": "09/21/2022",
+                    "medical_providers_list": [
+                        "Donnie K. Hardon",
+                        "MD",
+                        "Piedmont MEALTHCARE",
+                        "ChartPro Incorporated"
+                    ],
+                    "page_number": 37,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 996,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 6166,
+                            "output_tokens": 140
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient has a medical history including obstructive sleep apnea of fluid, brain tumor, hypertension, major depressive disorder, and obesity. Multiple surgical procedures have been performed, including brain surgery and appendectomy.",
+                    "answer": "Obstructive sleep apnea\nof fluid",
+                    "condition_type": "Pre-existing Condition",
+                    "content": "\nHypertension\nMDD (major depressive disorder), recurrent episode, moderate (HC)\nObesity due to excess calories\nObstructive sleep apnea\nof fluid\nTesticular hypofunction\nPast Surgical History:\nProcedure Laterality Date\nAPPENDECTOMY\nBRAIN",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "G47",
+                    "begin_offset": 46718,
+                    "linked_date": "09/21/2022",
+                    "medical_providers_list": [
+                        "Donnie K. Hardon",
+                        "MD",
+                        "Piedmont MEALTHCARE",
+                        "ChartPro Incorporated"
+                    ],
+                    "page_number": 37,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 1144,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 6307,
+                            "output_tokens": 125
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient has a medical history including testicular hypofunction, brain tumor, hypertension, major depressive disorder, obesity, and obstructive sleep apnea. He has undergone multiple brain surgeries, appendectomy, and wisdom tooth extraction.",
+                    "answer": "Testicular hypofunction",
+                    "condition_type": "Pre-existing Condition",
+                    "content": " recurrent episode, moderate (HC)\nObesity due to excess calories\nObstructive sleep apnea\nof fluid\nTesticular hypofunction\nPast Surgical History:\nProcedure Laterality Date\nAPPENDECTOMY\nBRAIN SURGERY x4",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "E29",
+                    "begin_offset": 46751,
+                    "linked_date": "09/21/2022",
+                    "medical_providers_list": [
+                        "Donnie K. Hardon",
+                        "MD",
+                        "Piedmont MEALTHCARE",
+                        "ChartPro Incorporated"
+                    ],
+                    "page_number": 37,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 1055,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 6201,
+                            "output_tokens": 132
+                        }
+                    }
+                },
+                {
+                    "generated_content": null,
+                    "answer": "Heart attack",
+                    "condition_type": null,
+                    "content": " Stability: NOT on Tile\n## Family History\nProblem | Relation | Age of Onset\nHeart attack | Mother | \nDiabotos | Mother | \nHypertension",
+                    "is_true": false,
+                    "classified_as": "Family History",
+                    "icd10cm_concept_code": "Z82",
+                    "begin_offset": 47951,
+                    "linked_date": "09/21/2022",
+                    "medical_providers_list": null,
+                    "page_number": 38,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 967,
+                            "output_tokens": 7
+                        }
+                    }
+                },
+                {
+                    "generated_content": null,
+                    "answer": "Diabotos",
+                    "condition_type": null,
+                    "content": " History\nProblem | Relation | Age of Onset\nHeart attack | Mother | \nDiabotos | Mother | \nHypertension | Mother | \nHeart",
+                    "is_true": false,
+                    "classified_as": "Family History",
+                    "icd10cm_concept_code": "Z82",
+                    "begin_offset": 47976,
+                    "linked_date": "09/21/2022",
+                    "medical_providers_list": null,
+                    "page_number": 38,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 998,
+                            "output_tokens": 7
+                        }
+                    }
+                },
+                {
+                    "generated_content": null,
+                    "answer": "Hypertension",
+                    "condition_type": null,
+                    "content": " Age of Onset\nHeart attack | Mother | \nDiabotos | Mother | \nHypertension | Mother | \nHeart attack | Father | ",
+                    "is_true": false,
+                    "classified_as": "Family History",
+                    "icd10cm_concept_code": "Z82",
+                    "begin_offset": 47997,
+                    "linked_date": "09/21/2022",
+                    "medical_providers_list": null,
+                    "page_number": 38,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 996,
+                            "output_tokens": 7
+                        }
+                    }
+                },
+                {
+                    "generated_content": null,
+                    "answer": "Heart attack",
+                    "condition_type": null,
+                    "content": " | Mother | \nDiabotos | Mother | \nHypertension | Mother | \nHeart attack | Father | \nHypertension | Father | \nStroke",
+                    "is_true": false,
+                    "classified_as": "Family History",
+                    "icd10cm_concept_code": "Z82",
+                    "begin_offset": 48022,
+                    "linked_date": "09/21/2022",
+                    "medical_providers_list": null,
+                    "page_number": 38,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 961,
+                            "output_tokens": 7
+                        }
+                    }
+                },
+                {
+                    "generated_content": null,
+                    "answer": "Hypertension",
+                    "condition_type": null,
+                    "content": " Mother | \nHypertension | Mother | \nHeart attack | Father | \nHypertension | Father | \nStroke | Other | \nCancer",
+                    "is_true": false,
+                    "classified_as": "Family History",
+                    "icd10cm_concept_code": "Z82",
+                    "begin_offset": 48047,
+                    "linked_date": "09/21/2022",
+                    "medical_providers_list": null,
+                    "page_number": 38,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 984,
+                            "output_tokens": 7
+                        }
+                    }
+                },
+                {
+                    "generated_content": null,
+                    "answer": "Stroke",
+                    "condition_type": null,
+                    "content": " Mother | \nHeart attack | Father | \nHypertension | Father | \nStroke | Other | \nCancer | Other |\nAdministered |",
+                    "is_true": false,
+                    "classified_as": "Family History",
+                    "icd10cm_concept_code": "Z82.3",
+                    "begin_offset": 48072,
+                    "linked_date": "09/21/2022",
+                    "medical_providers_list": null,
+                    "page_number": 38,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 935,
+                            "output_tokens": 7
+                        }
+                    }
+                },
+                {
+                    "generated_content": null,
+                    "answer": "Cancer",
+                    "condition_type": null,
+                    "content": " | Father | \nHypertension | Father | \nStroke | Other | \nCancer | Other |\nAdministered | Date(s) Administered\nInfluenza High Dose",
+                    "is_true": false,
+                    "classified_as": "Family History",
+                    "icd10cm_concept_code": "Z80",
+                    "begin_offset": 48090,
+                    "linked_date": "09/21/2022",
+                    "medical_providers_list": null,
+                    "page_number": 38,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 912,
+                            "output_tokens": 7
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient was involved in a motor vehicle accident injuring a restrained driver, with a subsequent encounter focusing on acute left shoulder pain. An MRI of the left shoulder without contrast was ordered, with a plan for physical therapy and potential follow-up imaging.",
+                    "answer": "Motor vehicle accident injuring restrained driver, subsequent encounter",
+                    "condition_type": "Cause",
+                    "content": " patient's sedation requirement? No Sedation\n## Assessment:\n1. Acute pain of left shoulder\n2. Motor vehicle accident injuring restrained driver, subsequent encounter\n## Plan:\nOrders Placed This Encounter\nMRI shoulder left without",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "V59.9XXD",
+                    "begin_offset": 49697,
+                    "linked_date": "09/21/2022",
+                    "medical_providers_list": [
+                        "Dennis K Harden",
+                        "MD",
+                        "Piedmont Physicians at Stadium"
+                    ],
+                    "page_number": 39,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 1125,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 4601,
+                            "output_tokens": 108
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient underwent a Mrl joint upr extrem w/o dye procedure on 09/24/2022. The medical imaging service was provided by Bridgeway Diagnostic Radiology, with a total charge of $1,545.00 for the diagnostic examination of the upper extremity joint.",
+                    "answer": "Mrl joint upr extrem w/o dye",
+                    "condition_type": "Pre-existing Condition",
+                    "content": " / ADJ Patient | Amount Charged\nROHENAI | 09/24/2022 | 73221 | M25.512 | Mrl joint upr extrem w/o dye | 0 | 1545.00\nCurrent | Above 30 | Above",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "T84",
+                    "begin_offset": 52126,
+                    "linked_date": "09/24/2022",
+                    "medical_providers_list": [
+                        "BRIDGEWAY DIAGNOSTIC RADIOLOGY",
+                        "LLC",
+                        "ROHENAI"
+                    ],
+                    "page_number": 41,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 1208,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 5181,
+                            "output_tokens": 133
+                        }
+                    }
+                },
+                {
+                    "generated_content": null,
+                    "answer": "Pregnant",
+                    "condition_type": null,
+                    "content": " SELECTED, NOT_SELECTED, Yes (No\nLatex | NOT_SELECTED, Yes No\nMedications | NOT_SELECTED, Yes No\nPregnant | SELECTED, NOT_SELECTED, Yes No\nClaustrophobic | SELECTED, NOT_SELECTED, Yes",
+                    "is_true": false,
+                    "classified_as": "Unclear/ No data found in the content",
+                    "icd10cm_concept_code": "Z33.1",
+                    "begin_offset": 54586,
+                    "linked_date": "09/24/2022",
+                    "medical_providers_list": null,
+                    "page_number": 42,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 928,
+                            "output_tokens": 14
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient is preparing for an MRI scan and has been identified as Claustrophobic. Specific pre-scan instructions include removing bobby pins, medication skin patches, hearing aids, and dental work containing metal to ensure safe imaging procedures.",
+                    "answer": "Claustrophobic",
+                    "condition_type": "Pre-existing Condition",
+                    "content": " NOT_SELECTED, Yes No\nMedications | NOT_SELECTED, Yes No\nPregnant | SELECTED, NOT_SELECTED, Yes No\nClaustrophobic | SELECTED, NOT_SELECTED, Yes No\nUnable to walk/stand without |",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "F40",
+                    "begin_offset": 54628,
+                    "linked_date": "01/09/2023",
+                    "medical_providers_list": [],
+                    "page_number": 42,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 971,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 7553,
+                            "output_tokens": 99
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient is a Hypertensive individual requiring medical attention, with specific considerations for MRI procedures including potential metal removal from hearing aids and dental work, and potential use of contrast agents.",
+                    "answer": "Hypertensive",
+                    "condition_type": "Pre-existing Condition",
+                    "content": "\nassistance | NOT_SELECTED, Yes No\nUnable to control body temperature | NOT_SELECTED, Yes No\nHypertensive (high blood pressure) | SELECTED, Yes No\nI have reviewed",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "I10",
+                    "begin_offset": 54800,
+                    "linked_date": "01/09/2023",
+                    "medical_providers_list": [],
+                    "page_number": 42,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 976,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 7577,
+                            "output_tokens": 88
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient has been identified with high blood pressure. Medical documentation indicates potential procedural considerations, including MRI preparation and contrast-related assessments. Specific medical details suggest careful evaluation of patient's current health status and potential diagnostic requirements.",
+                    "answer": "high blood pressure",
+                    "condition_type": "Pre-existing Condition",
+                    "content": " | NOT_SELECTED, Yes No\nUnable to control body temperature | NOT_SELECTED, Yes No\nHypertensive (high blood pressure) | SELECTED, Yes No\nI have reviewed this information",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "I10",
+                    "begin_offset": 54814,
+                    "linked_date": "01/09/2023",
+                    "medical_providers_list": [],
+                    "page_number": 42,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 961,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 7569,
+                            "output_tokens": 91
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Mary Mills has a history of CVA, with medical documentation indicating a previous cerebrovascular accident. She appears to have undergone medical imaging and diagnostic procedures, with records noting her height, weight, and specific medical examination details.",
+                    "answer": "CVA",
+                    "condition_type": "Pre-existing Condition",
+                    "content": " TBS || Contrast | Ne || Other Important Information for Exam: | Pt hx.of CVA in past \nFrom: Mary Mills\nFax: 13344082854\nTo:\nFax:",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "I63",
+                    "begin_offset": 55315,
+                    "linked_date": "01/09/2023",
+                    "medical_providers_list": [
+                        "Piedrens"
+                    ],
+                    "patient": {
+                        "patient_list": [
+                            "Mary Mills"
+                        ],
+                        "type": "others"
+                    },
+                    "page_number": 43,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 966,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 3969,
+                            "output_tokens": 195
+                        }
+                    }
+                },
+                {
+                    "generated_content": null,
+                    "answer": "PE",
+                    "condition_type": null,
+                    "content": " || Other | NOT_SELECTED \n## CT Angiogram\nCTA Brain | CTA Chest for PE | CTA Neck | CTA Renal | CTA Chest |",
+                    "is_true": false,
+                    "classified_as": "Person is Not Suffering",
+                    "icd10cm_concept_code": "I26",
+                    "begin_offset": 65147,
+                    "linked_date": "01/09/2023",
+                    "medical_providers_list": null,
+                    "page_number": 50,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 937,
+                            "output_tokens": 10
+                        }
+                    }
+                },
+                {
+                    "generated_content": null,
+                    "answer": "Thyroid AAA",
+                    "condition_type": null,
+                    "content": " Chest Abdomen Abd and Pelvis with Bilat lower extremity runoff Pelvis Other\n## ULTRASOUND/DOPPLER\nThyroid AAA Echocardiogram Carotid Doppler OB Uterus \u003C14wks 14 weeks Bio-Physical Profile",
+                    "is_true": false,
+                    "classified_as": "Unclear/ No data found in the content",
+                    "icd10cm_concept_code": "E04",
+                    "begin_offset": 67346,
+                    "linked_date": "01/09/2023",
+                    "medical_providers_list": null,
+                    "page_number": 50,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 1035,
+                            "output_tokens": 14
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient was involved in a motor vehicle accident approximately 3 weeks ago, resulting in left shoulder pain. He presented to the emergency room without a fracture and later visited the office with severe shoulder pain, decreased range of motion, and sleep difficulties.",
+                    "answer": "motor vehicle accident",
+                    "condition_type": "Cause",
+                    "content": " | HPI | 8/24 | Is a 36-year-old gentleman who was involved in a motor vehicle accident approximately 3 | weeks ago. Restrained no airbag deployment resultant",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "V89.2XXA",
+                    "begin_offset": 70525,
+                    "linked_date": "09/21/2022",
+                    "medical_providers_list": [
+                        "Dennis K Harden",
+                        "Piedmont Phy.Stadium"
+                    ],
+                    "page_number": 53,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 934,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 4590,
+                            "output_tokens": 107
+                        }
+                    }
+                },
+                {
+                    "generated_content": null,
+                    "answer": "fracture",
+                    "condition_type": null,
+                    "content": " left shoulder pain presented to the | emergency room not found to have a fracture. Presented to my office a few days later with",
+                    "is_true": false,
+                    "classified_as": "Person is Not Suffering",
+                    "icd10cm_concept_code": "S42.92XA",
+                    "begin_offset": 70692,
+                    "linked_date": "09/21/2022",
+                    "medical_providers_list": null,
+                    "page_number": 53,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 882,
+                            "output_tokens": 10
+                        }
+                    }
+                },
+                {
+                    "generated_content": null,
+                    "answer": "Heart attack",
+                    "condition_type": null,
+                    "content": " Piedmont Phy. Stadium 3342918325 \u003E\u003E\nP 6/7\nProblem | Relation | Age of Onset\nHeart attack | Mother | \nDiabetes | Mother | \nHypertension",
+                    "is_true": false,
+                    "classified_as": "Family History",
+                    "icd10cm_concept_code": "Z82",
+                    "begin_offset": 72457,
+                    "linked_date": "09/21/2022",
+                    "medical_providers_list": null,
+                    "page_number": 55,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 964,
+                            "output_tokens": 7
+                        }
+                    }
+                },
+                {
+                    "generated_content": null,
+                    "answer": "Diabetes",
+                    "condition_type": null,
+                    "content": " 6/7\nProblem | Relation | Age of Onset\nHeart attack | Mother | \nDiabetes | Mother | \nHypertension | Mother | \nHeart",
+                    "is_true": false,
+                    "classified_as": "Family History",
+                    "icd10cm_concept_code": "Z83.3",
+                    "begin_offset": 72482,
+                    "linked_date": "09/21/2022",
+                    "medical_providers_list": null,
+                    "page_number": 55,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 962,
+                            "output_tokens": 7
+                        }
+                    }
+                },
+                {
+                    "generated_content": null,
+                    "answer": "Hypertension",
+                    "condition_type": null,
+                    "content": " Age of Onset\nHeart attack | Mother | \nDiabetes | Mother | \nHypertension | Mother | \nHeart attack | Father | ",
+                    "is_true": false,
+                    "classified_as": "Family History",
+                    "icd10cm_concept_code": "Z82",
+                    "begin_offset": 72503,
+                    "linked_date": "09/21/2022",
+                    "medical_providers_list": null,
+                    "page_number": 55,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 1003,
+                            "output_tokens": 7
+                        }
+                    }
+                },
+                {
+                    "generated_content": null,
+                    "answer": "Heart attack",
+                    "condition_type": null,
+                    "content": " | Mother | \nDiabetes | Mother | \nHypertension | Mother | \nHeart attack | Father | \nHypertension | Father | \nStroke",
+                    "is_true": false,
+                    "classified_as": "Family History",
+                    "icd10cm_concept_code": "Z82",
+                    "begin_offset": 72528,
+                    "linked_date": "09/21/2022",
+                    "medical_providers_list": null,
+                    "page_number": 55,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 974,
+                            "output_tokens": 7
+                        }
+                    }
+                },
+                {
+                    "generated_content": null,
+                    "answer": "Hypertension",
+                    "condition_type": null,
+                    "content": " Mother | \nHypertension | Mother | \nHeart attack | Father | \nHypertension | Father | \nStroke | Other | \nCancer",
+                    "is_true": false,
+                    "classified_as": "Family History",
+                    "icd10cm_concept_code": "Z82",
+                    "begin_offset": 72553,
+                    "linked_date": "09/21/2022",
+                    "medical_providers_list": null,
+                    "page_number": 55,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 1003,
+                            "output_tokens": 7
+                        }
+                    }
+                },
+                {
+                    "generated_content": null,
+                    "answer": "Stroke",
+                    "condition_type": null,
+                    "content": " Mother | \nHeart attack | Father | \nHypertension | Father | \nStroke | Other | \nCancer | Other |\nFrom: Mary",
+                    "is_true": false,
+                    "classified_as": "Family History",
+                    "icd10cm_concept_code": "Z82.3",
+                    "begin_offset": 72578,
+                    "linked_date": "09/21/2022",
+                    "medical_providers_list": null,
+                    "page_number": 55,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 971,
+                            "output_tokens": 7
+                        }
+                    }
+                },
+                {
+                    "generated_content": null,
+                    "answer": "Cancer",
+                    "condition_type": null,
+                    "content": " | Father | \nHypertension | Father | \nStroke | Other | \nCancer | Other |\nFrom: Mary Mills Fax: 13344082854 2022-09-21 14:34",
+                    "is_true": false,
+                    "classified_as": "Family History",
+                    "icd10cm_concept_code": "Z80",
+                    "begin_offset": 72596,
+                    "linked_date": "09/21/2022",
+                    "medical_providers_list": null,
+                    "page_number": 55,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 957,
+                            "output_tokens": 7
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient is a male experiencing acute pain in the left shoulder following a motor vehicular accident in June 2022. The pain prompted a referral to physical therapy for treatment and evaluation at Physical Therapy of Phenix City.",
+                    "answer": "Pain",
+                    "condition_type": "Accident",
+                    "content": " Referring Physician: Harden, Dennis\n# Physical Therapy Initial Evaluation Plan of Care\nDiagnosis M25,512 Pain in left shoulder\nOnset Date 6/1/2022\n## Assessment\n## Assessment",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "M25.512",
+                    "begin_offset": 79548,
+                    "linked_date": "06/01/2022",
+                    "medical_providers_list": [
+                        "Maria Fe Godbey",
+                        "Physical Therapy of Phenix City"
+                    ],
+                    "page_number": 62,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 924,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 7243,
+                            "output_tokens": 118
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient experienced acute left shoulder pain following a motor vehicular accident where his vehicle was \"T-boned\" on his side. He sought emergency room treatment and underwent an X-ray. Prior to the accident, he had no shoulder issues.",
+                    "answer": "motor vehicular accident",
+                    "condition_type": "Cause",
+                    "content": " in left shoulder. He reports of onset of pain in left shoulder following a motor vehicular accident around June 1, 2022. He states the vehicle he was",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "V89.2XXA",
+                    "begin_offset": 79763,
+                    "linked_date": "06/01/2022",
+                    "medical_providers_list": [
+                        "Maria Fe Godbey",
+                        "Physical Therapy of Phenix City"
+                    ],
+                    "page_number": 62,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 930,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 5707,
+                            "output_tokens": 116
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient underwent physical therapy for left shoulder pain resulting from a motor vehicular accident. Following a \"T-bone\" collision, he experienced acute shoulder discomfort, with no prior shoulder issues. He has a medical history including a stroke affecting his right upper extremity and a childhood brain tumor.",
+                    "answer": "accident",
+                    "condition_type": "Accident",
+                    "content": " he went to the emergency room where an X-ray was performed. Prior to the accident, he states he did not have a problem in",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "Z04",
+                    "begin_offset": 79961,
+                    "linked_date": "06/01/2022",
+                    "medical_providers_list": [
+                        "Maria Fe Godbey",
+                        "Physical Therapy of Phenix City"
+                    ],
+                    "page_number": 62,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 847,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 6968,
+                            "output_tokens": 131
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient has a history of stroke affecting his right upper extremity and previously experienced a brain tumor. Following a motor vehicular accident, he developed acute left shoulder pain after being \"T-boned\" and underwent an X-ray at the emergency room.",
+                    "answer": "stroke",
+                    "condition_type": "Pre-existing Condition",
+                    "content": " he did not have a problem in left shoulder. He has a history of stroke affecting right upper extremity. Since the stroke, he states he",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "I69",
+                    "begin_offset": 80045,
+                    "linked_date": "06/01/2022",
+                    "medical_providers_list": [
+                        "Maria Fe Godbey",
+                        "Physical Therapy of Phenix City"
+                    ],
+                    "page_number": 62,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 836,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 6937,
+                            "output_tokens": 126
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient has a history of stroke affecting his right upper extremity and previously experienced a brain tumor. Following a motor vehicular accident on June 1, 2022, he developed acute left shoulder pain after being \"T-boned\" and underwent an X-ray at the emergency room.",
+                    "answer": "stroke",
+                    "condition_type": "Pre-existing Condition",
+                    "content": " left shoulder. He has a history of stroke affecting right upper extremity. Since the stroke, he states he uses his left upper extremity primarily.",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "I63.9",
+                    "begin_offset": 80095,
+                    "linked_date": "06/01/2022",
+                    "medical_providers_list": [
+                        "Maria Fe Godbey",
+                        "Physical Therapy of Phenix City"
+                    ],
+                    "page_number": 62,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 840,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 6951,
+                            "output_tokens": 128
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient has a history of a brain tumor from childhood and a stroke affecting his right upper extremity. Following a motor vehicle accident in June 2022, he experienced acute left shoulder pain and seeks physical therapy to improve his condition.",
+                    "answer": "brain tumor",
+                    "condition_type": "Pre-existing Condition",
+                    "content": " he uses his left upper extremity primarily. He also has a history of a brain tumor when he was 7 years old. He states he is",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "D49.6",
+                    "begin_offset": 80184,
+                    "linked_date": "06/01/2022",
+                    "medical_providers_list": [
+                        "Maria Fe Godbey",
+                        "Physical Therapy of Phenix City"
+                    ],
+                    "page_number": 62,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 846,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 6935,
+                            "output_tokens": 121
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Roger Pouncey experienced a motor vehicular accident in June 2022, resulting in left shoulder pain. Blind in his right eye and with a history of stroke and brain tumor, he primarily uses his left upper extremity and aims to improve his condition through regular exercises.",
+                    "answer": "blind",
+                    "condition_type": "Pre-existing Condition",
+                    "content": " of a brain tumor when he was 7 years old. He states he is blind on right eye. He has high blood pressure. He had",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "H54",
+                    "begin_offset": 80237,
+                    "linked_date": "06/01/2022",
+                    "medical_providers_list": [
+                        "Maria Fe Godbey",
+                        "Physical Therapy of Phenix City"
+                    ],
+                    "patient": {
+                        "patient_list": [
+                            "Roger Pouncey"
+                        ],
+                        "type": "others"
+                    },
+                    "page_number": 62,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 832,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 6939,
+                            "output_tokens": 138
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient has a history of high blood pressure, stroke affecting his right upper extremity, and a past brain tumor. Following a motor vehicular accident in June 2022, he experienced left shoulder pain. He currently takes Lisinopril and Metformin and exercises three days weekly with the goal of improving his condition.",
+                    "answer": "high blood pressure",
+                    "condition_type": "Comorbidity",
+                    "content": " was 7 years old. He states he is blind on right eye. He has high blood pressure. He had an appendectomy in 1998. Medications include Lisinopril",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "I10",
+                    "begin_offset": 80264,
+                    "linked_date": "06/01/2022",
+                    "medical_providers_list": [
+                        "Maria Fe Godbey",
+                        "Physical Therapy of Phenix City"
+                    ],
+                    "page_number": 62,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 875,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 7006,
+                            "output_tokens": 135
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient will improve scapular stability through physical therapy, utilizing therapeutic exercises and Electrical Stimulation. The treatment plan involves 8 visits over 4 weeks, focusing on neuromuscular reeducation and achieving independent performance of home exercise program with correct technique.",
+                    "answer": "Electrical Stimulation",
+                    "condition_type": "Accident",
+                    "content": " 14 Areas 97112 - Neuromuscular Reeducation - Therapeutic Procedure - 1+ Areas G0283 - Electrical Stimulation (Unattended) Medicare-Modality to 1+ areas\n## Treatment\nFrequency: | 2",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "T85",
+                    "begin_offset": 83093,
+                    "linked_date": "09/07/2022",
+                    "medical_providers_list": [
+                        "Maria Fe Godbey",
+                        "Dennis Harden"
+                    ],
+                    "page_number": 63,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 1018,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 4849,
+                            "output_tokens": 111
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient experiences pain in left shoulder since June 2022. Initial physical therapy treatment focused on neuromuscular reeducation, improving alignment, and scapular stability. Patient reports slight soreness after treatment but currently experiences minimal discomfort.",
+                    "answer": "Pain in left shoulder",
+                    "condition_type": "Accident",
+                    "content": " / PT, DPT, NCS Referring Physician: Harden, Dennis\nPhysical Therapy Treatment Note\nDiagnosis M25.512 Pain in left shoulder\nOnset Date 6/1/2022\n## Assessment\n## Assessment\nS: Patient reports",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "M25.512",
+                    "begin_offset": 83902,
+                    "linked_date": "06/01/2022",
+                    "medical_providers_list": [
+                        "Maria Fe Godbey",
+                        "Physical Therapy of Phenix City"
+                    ],
+                    "page_number": 64,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 974,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 6058,
+                            "output_tokens": 123
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient experiences pain in left shoulder with an intensity of 7/10. Physical therapy treatment includes neuromuscular reeducation and therapeutic exercises focusing on improving alignment, scapular stability, joint mechanics, and range of motion.",
+                    "answer": "Pain in left shoulder",
+                    "condition_type": "Accident",
+                    "content": " PT, DPT, NCS Referring Physician: Harden, Dennis\n# Physical Therapy Treatment Note\nDiagnosis M25.512 Pain in left shoulder\nOnset Date 6/1/2022\n## Assessment\n## Assessment\nS: Patient reports",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "M25.512",
+                    "begin_offset": 85820,
+                    "linked_date": "06/01/2022",
+                    "medical_providers_list": [
+                        "Maria Fe Godbey",
+                        "Physical Therapy of Phenix City"
+                    ],
+                    "page_number": 65,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 995,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 6398,
+                            "output_tokens": 120
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient is receiving physical therapy for pain in left shoulder, experiencing reduced pain intensity to 3/10. Treatment includes neuromuscular reeducation and therapeutic exercises focusing on improving alignment, scapular stability, and joint mechanics.",
+                    "answer": "Pain in left shoulder",
+                    "condition_type": "Accident",
+                    "content": " Godbey, PT, DPT, NCS Referring Physician: Harden, Dennis\nPhysical Therapy Treatment Note\nDiagnosis M25.512 Pain in left shoulder\nOnset Date 5/31/2022\n## Assessment\nAssessment\nS: Patient reports of",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "M25.512",
+                    "begin_offset": 87970,
+                    "linked_date": "05/31/2022",
+                    "medical_providers_list": [
+                        "Maria Fe Godbey",
+                        "Physical Therapy of Phenix City"
+                    ],
+                    "page_number": 66,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 985,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 6194,
+                            "output_tokens": 120
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient experiences pain in left shoulder with an intensity of 6/10, originating from an unknown cause. Treatment focused on neuromuscular reeducation to improve shoulder alignment, scapular stability, and overall shoulder function during a physical therapy session.",
+                    "answer": "Pain in left shoulder",
+                    "condition_type": "Accident",
+                    "content": " PT, DPT, NCS Referring Physician: Harden, Dennis\n# Physical Therapy Treatment Note\nDiagnosis M25.512 Pain in left shoulder\nOnset Date 5/31/2022\n## Assessment\n## Assessment\nS: Patient reports",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "M25.512",
+                    "begin_offset": 89882,
+                    "linked_date": "05/31/2022",
+                    "medical_providers_list": [
+                        "Maria Fe Godbey",
+                        "Physical Therapy of Phenix City"
+                    ],
+                    "page_number": 67,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 976,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 6239,
+                            "output_tokens": 125
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient is receiving physical therapy for pain in left shoulder, addressing acute shoulder discomfort through neuromuscular reeducation, therapeutic exercises, and electrical stimulation to improve alignment, range of motion, strength, and flexibility.",
+                    "answer": "Pain in left shoulder",
+                    "condition_type": "Accident",
+                    "content": " PT, DPT, NCS Referring Physician: Harden, Dennis\n# Physical Therapy Treatment Note\nDiagnosis M25.512 Pain in left shoulder\nOnset Date 5/31/2022\n## Assessment\n## Assessment\nO: Performed treatment",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "M25.512",
+                    "begin_offset": 91913,
+                    "linked_date": "05/31/2022",
+                    "medical_providers_list": [
+                        "Maria Fe Godbey",
+                        "Physical Therapy of Phenix City"
+                    ],
+                    "page_number": 68,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 979,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 5822,
+                            "output_tokens": 119
+                        }
+                    }
+                },
+                {
+                    "generated_content": "Patient is receiving physical therapy for pain in left shoulder, experiencing ongoing discomfort rated 4-5/10. Treatment focuses on neuromuscular reeducation to improve alignment, scapular stability, and joint mechanics, with the patient reporting gradual improvement.",
+                    "answer": "Pain in left shoulder",
+                    "condition_type": "Accident",
+                    "content": " PT, DPT, NCS Referring Physician: Harden, Dennis\n# Physical Therapy Treatment Note\nDiagnosis M25.512 Pain in left shoulder\nOnset Date 5/30/2022\n## Assessment\n## Assessment\nS: Patient reports",
+                    "is_true": true,
+                    "classified_as": "Person is Suffering",
+                    "icd10cm_concept_code": "M25.512",
+                    "begin_offset": 93643,
+                    "linked_date": "05/30/2022",
+                    "medical_providers_list": [
+                        "Maria Fe Godbey",
+                        "Physical Therapy of Phenix City"
+                    ],
+                    "page_number": 69,
+                    "usage": {
+                        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+                            "input_tokens": 962,
+                            "output_tokens": 9
+                        },
+                        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+                            "input_tokens": 6207,
+                            "output_tokens": 128
+                        }
+                    }
+                }
+            ]
+        }
+    ],
+    "task": "MEDICAL_ENTITY_DETECTION",
+    "output_s3_uri": "S3://claimlens-content-storage-demo/extracted_text_output/claimlens-content-storage-demo_5383ecb8-75f3-413e-bb4c-db6a941c7a20__document_uuid__A644998_1_txt/medical-entity-detection/aggregated_results.json",
+    "usage": {
+        "us.anthropic.claude-3-7-sonnet-20250219-v1:0": {
+            "input_tokens": 129242,
+            "output_tokens": 1103
+        },
+        "us.anthropic.claude-3-5-haiku-20241022-v1:0": {
+            "input_tokens": 406475,
+            "output_tokens": 9222
+        }
+    }
+}
